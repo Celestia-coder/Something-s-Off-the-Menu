@@ -1,0 +1,810 @@
+[gd_scene format=3 uid="uid://2w5cjv5qkdqv"]
+
+[ext_resource type="Texture2D" uid="uid://c2re75u44egf4" path="res://Assets/Background/5.png" id="1_d4i4a"]
+[ext_resource type="Texture2D" uid="uid://bubuc3ad8hjnw" path="res://Assets/UI assets pack 2/UI books & more.png" id="1_tgpbu"]
+[ext_resource type="Texture2D" uid="uid://ditdbvwjo7p17" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Fill01a.png" id="2_qruag"]
+[ext_resource type="Texture2D" uid="uid://b1ktnmsxyxxob" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Slot01b.png" id="3_qrtx3"]
+[ext_resource type="Texture2D" uid="uid://cuv5jjau6u6vb" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="4_fnd3u"]
+[ext_resource type="Texture2D" uid="uid://deo7x7cdl0840" path="res://Assets/Icons/Status icons.png" id="5_fnd3u"]
+[ext_resource type="Texture2D" uid="uid://b143ck3muk8t5" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Fill01b.png" id="6_d4i4a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d4i4a"]
+font_size = 45
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6qgjd"]
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lllsr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_usg41"]
+font_size = 30
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qruag"]
+font_size = 22
+shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qgjd"]
+atlas = ExtResource("5_fnd3u")
+region = Rect2(110, 333, 320, 302)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fnd3u"]
+font_size = 22
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lllsr"]
+line_spacing = -0.095
+font_size = 15
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqbrx"]
+font_size = 30
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lllsr"]
+atlas = ExtResource("5_fnd3u")
+region = Rect2(580, 333, 322, 319)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usg41"]
+atlas = ExtResource("5_fnd3u")
+region = Rect2(1107, 333, 329, 319)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8txpp"]
+line_spacing = -0.095
+font_size = 90
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cmnpn"]
+line_spacing = -0.095
+font_size = 24
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s285m"]
+line_spacing = -0.095
+font_size = 17
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5anri"]
+font_size = 15
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ywxc"]
+font_size = 15
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[node name="FinalEvaluation" type="Control" unique_id=1422389473]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1153819627]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_d4i4a")
+expand_mode = 1
+
+[node name="FinalEvaluationPanel" type="Control" parent="." unique_id=1442563598]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TierAFrame" type="NinePatchRect" parent="FinalEvaluationPanel" unique_id=662270008]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.225, 3.225)
+pivot_offset = Vector2(150, 100)
+texture = ExtResource("1_tgpbu")
+region_rect = Rect2(608, 16, 48, 65)
+patch_margin_left = 12
+patch_margin_top = 11
+patch_margin_right = 12
+patch_margin_bottom = 14
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
+
+[node name="TopSection" type="Control" parent="FinalEvaluationPanel" unique_id=2133920837]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -456.0
+offset_top = -265.0
+offset_right = 456.0
+offset_bottom = -175.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="FinalEvaluationPanel/TopSection" unique_id=1354248082]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="FinalEvaluationPanel/TopSection" unique_id=512143407]
+layout_mode = 1
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 482.0
+offset_bottom = 49.0
+text = "FINAL EVALUATION"
+label_settings = SubResource("LabelSettings_d4i4a")
+metadata/_edit_group_ = true
+
+[node name="Description" type="Label" parent="FinalEvaluationPanel/TopSection" unique_id=437275417]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 455.0
+offset_bottom = 24.0
+grow_vertical = 2
+text = "INSPECTOR PERFORMANCE REPORT"
+label_settings = SubResource("LabelSettings_6qgjd")
+metadata/_edit_group_ = true
+
+[node name="TopDivider" type="TextureRect" parent="FinalEvaluationPanel/TopSection" unique_id=827727223]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -460.0
+offset_top = -2.0
+offset_right = 460.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_qruag")
+
+[node name="CloseButton" type="Button" parent="FinalEvaluationPanel/TopSection" unique_id=57887810]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 51.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_lllsr")
+flat = true
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="FinalEvaluationPanel/TopSection/CloseButton" unique_id=1510682968]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = ExtResource("3_qrtx3")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="FinalEvaluationPanel/TopSection/CloseButton" unique_id=590979038]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("4_fnd3u")
+
+[node name="CategoryFrame" type="NinePatchRect" parent="FinalEvaluationPanel/TopSection" unique_id=740393595]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 104.0
+offset_top = -48.0
+offset_right = 326.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tgpbu")
+region_rect = Rect2(16, 272, 32, 16)
+patch_margin_left = 6
+patch_margin_top = 4
+patch_margin_right = 6
+patch_margin_bottom = 4
+
+[node name="CategoryLabel" type="Label" parent="FinalEvaluationPanel/TopSection/CategoryFrame" unique_id=1403658961]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.5
+offset_right = 35.5
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Pasta"
+label_settings = SubResource("LabelSettings_usg41")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MiddleSection" type="Control" parent="FinalEvaluationPanel" unique_id=233803765]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -176.0
+offset_right = 448.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="FinalEvaluationPanel/MiddleSection" unique_id=1623298922]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7739361, 0.42972854, 0.37900037, 1)
+metadata/_edit_lock_ = true
+
+[node name="InvestigationSummary" type="Control" parent="FinalEvaluationPanel/MiddleSection" unique_id=1633609717]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 328.0
+metadata/_edit_group_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary" unique_id=331915306]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6627451, 1, 1, 1)
+
+[node name="Frame" type="Control" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary" unique_id=1195811626]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_group_ = true
+
+[node name="MainFrame" type="NinePatchRect" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary/Frame" unique_id=1103485676]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 116.8
+offset_top = 85.6
+offset_right = 270.40002
+offset_bottom = 216.79999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+pivot_offset = Vector2(91.2, 70.4)
+texture = ExtResource("1_tgpbu")
+region_rect = Rect2(16, 272, 32, 16)
+patch_margin_left = 6
+patch_margin_top = 4
+patch_margin_right = 6
+patch_margin_bottom = 4
+
+[node name="TitleFrame" type="NinePatchRect" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary/Frame" unique_id=310087644]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 102.0
+offset_right = 242.0
+offset_bottom = 22.000008
+grow_horizontal = 2
+scale = Vector2(2.235, 2.235)
+pivot_offset = Vector2(70, 11)
+texture = ExtResource("1_tgpbu")
+region_rect = Rect2(80, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+
+[node name="Title" type="Label" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary/Frame" unique_id=1591223836]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 46.5
+offset_right = 297.5
+offset_bottom = 20.0
+grow_horizontal = 2
+text = "INVESTIGATION SUMMARY"
+label_settings = SubResource("LabelSettings_qruag")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CorrectContainer" type="Control" parent="FinalEvaluationPanel/MiddleSection" unique_id=975535924]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 35.0
+offset_right = -528.0
+offset_bottom = -222.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusIcon" type="TextureRect" parent="FinalEvaluationPanel/MiddleSection/CorrectContainer" unique_id=456288548]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -18.125
+offset_right = 40.0
+offset_bottom = 18.125
+grow_vertical = 2
+texture = SubResource("AtlasTexture_6qgjd")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label1" type="Label" parent="FinalEvaluationPanel/MiddleSection/CorrectContainer" unique_id=1123478263]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 46.0
+offset_top = -20.5
+offset_right = 206.0
+offset_bottom = 3.5
+grow_vertical = 2
+text = "Correct Reports"
+label_settings = SubResource("LabelSettings_fnd3u")
+
+[node name="Label2" type="Label" parent="FinalEvaluationPanel/MiddleSection/CorrectContainer" unique_id=1607417078]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = 5.5
+offset_right = 250.0
+offset_bottom = 21.5
+grow_vertical = 2
+text = "Dish correctly judged."
+label_settings = SubResource("LabelSettings_lllsr")
+autowrap_mode = 3
+
+[node name="CategoryLabel" type="Label" parent="FinalEvaluationPanel/MiddleSection/CorrectContainer" unique_id=1112621760]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "18"
+label_settings = SubResource("LabelSettings_xqbrx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FalseContainer" type="Control" parent="FinalEvaluationPanel/MiddleSection" unique_id=259823981]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 130.0
+offset_right = -528.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusIcon2" type="TextureRect" parent="FinalEvaluationPanel/MiddleSection/FalseContainer" unique_id=696762960]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -18.125
+offset_right = 40.0
+offset_bottom = 18.125
+grow_vertical = 2
+texture = SubResource("AtlasTexture_lllsr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label1" type="Label" parent="FinalEvaluationPanel/MiddleSection/FalseContainer" unique_id=343465968]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 46.0
+offset_top = -27.5
+offset_right = 204.0
+offset_bottom = -3.5
+grow_vertical = 2
+text = "False Violations"
+label_settings = SubResource("LabelSettings_fnd3u")
+
+[node name="Label2" type="Label" parent="FinalEvaluationPanel/MiddleSection/FalseContainer" unique_id=122009895]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -1.5
+offset_right = 250.0
+offset_bottom = 33.5
+grow_vertical = 2
+text = "Legitimate dishes incorrectly flagged."
+label_settings = SubResource("LabelSettings_lllsr")
+autowrap_mode = 3
+
+[node name="Score" type="Label" parent="FinalEvaluationPanel/MiddleSection/FalseContainer" unique_id=730041170]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "18"
+label_settings = SubResource("LabelSettings_xqbrx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CriticalContainer" type="Control" parent="FinalEvaluationPanel/MiddleSection" unique_id=2026990813]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 225.0
+offset_right = -528.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusIcon3" type="TextureRect" parent="FinalEvaluationPanel/MiddleSection/CriticalContainer" unique_id=513955415]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -18.125
+offset_right = 40.0
+offset_bottom = 18.125
+grow_vertical = 2
+texture = SubResource("AtlasTexture_usg41")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label1" type="Label" parent="FinalEvaluationPanel/MiddleSection/CriticalContainer" unique_id=946930218]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 46.0
+offset_top = -28.5
+offset_right = 218.0
+offset_bottom = -2.5
+grow_vertical = 2
+text = "Critical Violations"
+label_settings = SubResource("LabelSettings_fnd3u")
+
+[node name="Label2" type="Label" parent="FinalEvaluationPanel/MiddleSection/CriticalContainer" unique_id=307338474]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -1.5
+offset_right = 250.0
+offset_bottom = 33.5
+grow_vertical = 2
+text = "Suspicious dishes not detected."
+label_settings = SubResource("LabelSettings_lllsr")
+autowrap_mode = 3
+
+[node name="CategoryLabel3" type="Label" parent="FinalEvaluationPanel/MiddleSection/CriticalContainer" unique_id=2037299910]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "18"
+label_settings = SubResource("LabelSettings_xqbrx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DividerH1" type="TextureRect" parent="FinalEvaluationPanel/MiddleSection" unique_id=257646769]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 130.0
+offset_right = 376.0
+offset_bottom = 132.0
+texture = ExtResource("6_d4i4a")
+
+[node name="DividerH2" type="TextureRect" parent="FinalEvaluationPanel/MiddleSection" unique_id=1600424114]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 225.0
+offset_right = 376.0
+offset_bottom = 227.0
+texture = ExtResource("6_d4i4a")
+
+[node name="DividerV" type="TextureRect" parent="FinalEvaluationPanel/MiddleSection" unique_id=800426594]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 36.529602
+offset_right = 558.29333
+offset_bottom = 38.529602
+rotation = 1.5707964
+texture = ExtResource("6_d4i4a")
+
+[node name="InvestigationSummary2" type="Control" parent="FinalEvaluationPanel/MiddleSection" unique_id=1923511855]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -496.0
+offset_bottom = 328.0
+grow_horizontal = 0
+
+[node name="ColorRect2" type="ColorRect" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary2" unique_id=157660185]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6627451, 1, 1, 1)
+
+[node name="Frame" type="Control" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary2" unique_id=397095853]
+anchors_preset = 0
+offset_left = -400.0
+offset_right = -360.0
+offset_bottom = 40.0
+
+[node name="MainFrame" type="NinePatchRect" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary2/Frame" unique_id=160504527]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 516.8
+offset_top = 85.6
+offset_right = 715.19995
+offset_bottom = 216.79999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+pivot_offset = Vector2(91.2, 70.4)
+texture = ExtResource("1_tgpbu")
+region_rect = Rect2(16, 272, 32, 16)
+patch_margin_left = 6
+patch_margin_top = 4
+patch_margin_right = 6
+patch_margin_bottom = 4
+
+[node name="TitleFrame" type="NinePatchRect" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary2/Frame" unique_id=54781122]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 558.0
+offset_right = 698.0
+offset_bottom = 22.000008
+grow_horizontal = 2
+scale = Vector2(2.235, 2.235)
+pivot_offset = Vector2(70, 11)
+texture = ExtResource("1_tgpbu")
+region_rect = Rect2(80, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Title" type="Label" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary2/Frame" unique_id=898631401]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 502.5
+offset_right = 753.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "OVERALL PERFORMANCE"
+label_settings = SubResource("LabelSettings_qruag")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Label3" type="Label" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary2" unique_id=178729437]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.625
+offset_top = -73.5
+offset_right = 102.625
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "85%"
+label_settings = SubResource("LabelSettings_8txpp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary2" unique_id=1676382890]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.92
+offset_top = 51.0
+offset_right = 156.08002
+offset_bottom = 75.0
+grow_horizontal = 2
+text = "--- FINAL ACCURACY ---"
+label_settings = SubResource("LabelSettings_cmnpn")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="FinalEvaluationPanel/MiddleSection/InvestigationSummary2" unique_id=232797912]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.92
+offset_top = 183.0
+offset_right = 156.08002
+offset_bottom = 219.0
+grow_horizontal = 2
+text = "Final accuracy based on restaurant verdicts."
+label_settings = SubResource("LabelSettings_s285m")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BottomSection" type="Control" parent="FinalEvaluationPanel" unique_id=1862069757]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = 168.0
+offset_right = 448.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="FinalEvaluationPanel/BottomSection" unique_id=469069734]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainFrame2" type="NinePatchRect" parent="FinalEvaluationPanel/BottomSection" unique_id=579182850]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.2
+offset_top = 47.99996
+offset_right = 47.19998
+offset_bottom = 93.43997
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+pivot_offset = Vector2(91.2, 70.4)
+texture = ExtResource("1_tgpbu")
+region_rect = Rect2(16, 272, 32, 16)
+patch_margin_left = 6
+patch_margin_top = 4
+patch_margin_right = 6
+patch_margin_bottom = 4
+
+[node name="AllYearMonth2" type="Label" parent="FinalEvaluationPanel/BottomSection" unique_id=1176809857]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -432.0
+offset_top = -16.0
+offset_right = 432.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You have shown dedication to the standards of the bureu. Continue to improve your judgment and attention to detail. Keep up the good work!"
+label_settings = SubResource("LabelSettings_5anri")
+autowrap_mode = 3
+
+[node name="AllYearMonth3" type="Label" parent="FinalEvaluationPanel/BottomSection" unique_id=501697116]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -435.0
+offset_top = -44.0
+offset_right = -235.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SUPERVISOR'S NOTE:"
+label_settings = SubResource("LabelSettings_1ywxc")

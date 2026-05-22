@@ -1,0 +1,601 @@
+[gd_scene format=3 uid="uid://de6bwmrduh50n"]
+
+[ext_resource type="Texture2D" uid="uid://c2re75u44egf4" path="res://Assets/Background/5.png" id="1_utr8c"]
+[ext_resource type="Texture2D" uid="uid://bdg4agjrxm8xn" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="2_du1se"]
+[ext_resource type="Texture2D" uid="uid://6rp4lhx3xicx" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Frame01a.png" id="3_afo7v"]
+[ext_resource type="Texture2D" uid="uid://dv4fc5g7gp78v" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_BookPageLeft01a.png" id="4_bfaig"]
+[ext_resource type="Texture2D" uid="uid://cr1h53oeal3vj" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_GamepadDPadRight01a.png" id="5_qfnjh"]
+[ext_resource type="Texture2D" uid="uid://dvicx8nrmkrq2" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_GamepadDPadLeft01a.png" id="6_yqjga"]
+[ext_resource type="Texture2D" uid="uid://cebb1p0vxyken" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01a.png" id="7_v544m"]
+[ext_resource type="Texture2D" uid="uid://ca7df1nvexieb" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01b.png" id="8_hoere"]
+[ext_resource type="Texture2D" uid="uid://bubuc3ad8hjnw" path="res://Assets/UI assets pack 2/UI books & more.png" id="9_nbd03"]
+[ext_resource type="Texture2D" uid="uid://dba8j1ryqy77x" path="res://Assets/Dish Images/peach.png" id="9_qfnjh"]
+[ext_resource type="Texture2D" uid="uid://ditdbvwjo7p17" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Fill01a.png" id="11_54u3l"]
+[ext_resource type="Texture2D" uid="uid://y4op6xvkwpem" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_GamepadX01a.png" id="12_jw3yi"]
+[ext_resource type="Texture2D" uid="uid://cuv5jjau6u6vb" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="13_7ufiv"]
+[ext_resource type="Texture2D" uid="uid://psjf81qaprku" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconArrow01a.png" id="14_d5ib7"]
+[ext_resource type="Texture2D" uid="uid://bvarq4uxypsyk" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="15_54u3l"]
+[ext_resource type="Texture2D" uid="uid://r52iuv2rah2d" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Toggle03b.png" id="16_jw3yi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f7y6n"]
+font_size = 35
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nbd03"]
+font_size = 37
+
+[sub_resource type="LabelSettings" id="LabelSettings_kpboa"]
+font_size = 24
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dmahf"]
+font_size = 21
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yti3d"]
+atlas = ExtResource("9_nbd03")
+region = Rect2(352, 272, 32, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jw3yi"]
+load_path = "res://.godot/imported/UI_TravelBook_FrameSelect01b.png-6d59f12e45328e4fe6e97e6a5fe80056.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ufiv"]
+font_size = 27
+font_color = Color(0.003333596, 0.38581476, 0.05075202, 1)
+shadow_size = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d5ib7"]
+load_path = "res://.godot/imported/UI_TravelBook_FrameSelect01b.png-6d59f12e45328e4fe6e97e6a5fe80056.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_yti3d"]
+font_size = 27
+font_color = Color(0.71076673, 0, 0.08300986, 1)
+shadow_size = 5
+shadow_color = Color(0.8862745, 0.1254902, 0.1254902, 0.09411765)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_05gro"]
+load_path = "res://.godot/imported/UI_TravelBook_Fill01a.png-7331377144701cb21f89388bebcfe754.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_o3d7r"]
+font_size = 21
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1hpku"]
+line_spacing = 10.0
+font_size = 18
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[node name="DeskView" type="Control" unique_id=1405596458]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Background" type="TextureRect" parent="." unique_id=450891599]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_utr8c")
+expand_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2061991192]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -410.69995
+offset_top = -250.59998
+offset_right = 410.69995
+offset_bottom = 296.59998
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_du1se")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect" unique_id=1035307017]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = -150.0
+offset_right = 378.0
+offset_bottom = 150.0
+grow_vertical = 2
+texture = ExtResource("3_afo7v")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1745493335]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18125
+anchor_top = 0.76666665
+anchor_right = 0.5668608
+anchor_bottom = 1.6184475
+offset_top = 104.0
+offset_right = 53.618225
+offset_bottom = 312.1178
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+texture = ExtResource("4_bfaig")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect2" unique_id=57582481]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 246.4
+offset_top = -194.7
+offset_right = 631.4
+offset_bottom = -158.7
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+text = "Peach Pudding Parfait"
+label_settings = SubResource("LabelSettings_f7y6n")
+horizontal_alignment = 1
+
+[node name="UiTravelBookGamepadDPadRight01a" type="Sprite2D" parent="." unique_id=785102581]
+visible = false
+texture_filter = 1
+position = Vector2(1136, 376.00003)
+scale = Vector2(11.82, 11.82)
+texture = ExtResource("5_qfnjh")
+
+[node name="UiTravelBookGamepadDPadLeft01a" type="Sprite2D" parent="." unique_id=1871101105]
+visible = false
+texture_filter = 1
+position = Vector2(176, 376)
+scale = Vector2(11, 11)
+texture = ExtResource("6_yqjga")
+
+[node name="UiTravelBookFrameSelect01a" type="Sprite2D" parent="." unique_id=290357056]
+visible = false
+texture_filter = 1
+position = Vector2(392, 168.00003)
+scale = Vector2(4.075, 4.075)
+texture = ExtResource("7_v544m")
+
+[node name="UiTravelBookFrame01a" type="Sprite2D" parent="." unique_id=1417156179]
+texture_filter = 1
+position = Vector2(656.945, 34.665)
+scale = Vector2(4.0985484, 4.762143)
+texture = ExtResource("3_afo7v")
+
+[node name="Label3" type="Label" parent="." unique_id=154880050]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -352.0
+offset_right = 113.02594
+offset_bottom = -304.56787
+grow_horizontal = 2
+grow_vertical = 2
+text = "5:00"
+label_settings = SubResource("LabelSettings_nbd03")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UiTravelBookFrameSelect01b" type="Sprite2D" parent="." unique_id=2020721817]
+texture_filter = 1
+position = Vector2(358, 159)
+scale = Vector2(2.4055645, 3.2903547)
+texture = ExtResource("8_hoere")
+
+[node name="NinePatchRect2" type="TextureRect" parent="." unique_id=1587707073]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -111.0
+offset_right = -107.5
+offset_bottom = -89.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("7_v544m")
+
+[node name="Label" type="Label" parent="." unique_id=449668754]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.00006
+offset_top = -208.0
+offset_right = -241.00006
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dish 1 of 5"
+label_settings = SubResource("LabelSettings_kpboa")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=458410986]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -376.99997
+offset_top = -136.99998
+offset_right = -229.75229
+offset_bottom = 10.247681
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.18, 2.18)
+texture = ExtResource("9_nbd03")
+region_rect = Rect2(768, 64, 48, 48.49)
+patch_margin_left = 6
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Peach" type="Sprite2D" parent="." unique_id=1672500180]
+texture_filter = 1
+position = Vector2(424, 384)
+texture = ExtResource("9_qfnjh")
+
+[node name="Label2" type="Label" parent="." unique_id=1943155105]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -176.0
+offset_right = 34.0
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Roswell Resto"
+label_settings = SubResource("LabelSettings_dmahf")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=2003250581]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -144.0
+offset_right = -48.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_yti3d")
+
+[node name="UiTravelBookFill01a" type="Sprite2D" parent="." unique_id=1242249893]
+texture_filter = 1
+position = Vector2(628.25, 209.5)
+scale = Vector2(24, 1)
+texture = ExtResource("11_54u3l")
+
+[node name="UiTravelBookGamepadX01a" type="Sprite2D" parent="." unique_id=1754091151]
+visible = false
+texture_filter = 1
+position = Vector2(976, 152)
+scale = Vector2(5.635, 5.635)
+texture = ExtResource("12_jw3yi")
+
+[node name="UiTravelBookIconCross01a" type="Sprite2D" parent="." unique_id=1076705943]
+texture_filter = 1
+position = Vector2(968.875, 159.125)
+scale = Vector2(3.5535707, 3.5535717)
+texture = ExtResource("13_7ufiv")
+
+[node name="UiTravelBookIconArrow01a" type="Sprite2D" parent="." unique_id=1379768048]
+position = Vector2(1102, 376)
+scale = Vector2(5, 5)
+texture = ExtResource("14_d5ib7")
+
+[node name="UiTravelBookIconArrow01a2" type="Sprite2D" parent="." unique_id=1713570233]
+texture_filter = 1
+position = Vector2(177, 376)
+rotation = 3.1415927
+scale = Vector2(5, 5)
+texture = ExtResource("14_d5ib7")
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=416870596]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = 207.99988
+offset_right = -207.56589
+offset_bottom = 227.84485
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.225, 3.225)
+texture = SubResource("CompressedTexture2D_jw3yi")
+region_rect = Rect2(0, 0, 62, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="Label4" type="Label" parent="." unique_id=587236027]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = 208.00006
+offset_right = 7.0
+offset_bottom = 272.00006
+grow_horizontal = 2
+grow_vertical = 2
+text = "Verified"
+label_settings = SubResource("LabelSettings_7ufiv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="." unique_id=1572475434]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = 208.0
+offset_right = 120.43402
+offset_bottom = 227.84497
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.225, 3.225)
+texture = SubResource("CompressedTexture2D_d5ib7")
+region_rect = Rect2(0, 0, 62, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="Label5" type="Label" parent="." unique_id=1730997142]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = 208.0
+offset_right = 336.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Suspicious"
+label_settings = SubResource("LabelSettings_yti3d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="." unique_id=779400238]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -135.0
+offset_right = 113.42462
+offset_bottom = -9.755371
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.555, 2.555)
+texture = ExtResource("15_54u3l")
+region_rect = Rect2(0, 0, 62, 30)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="UiTravelBookFill01b" type="Sprite2D" parent="." unique_id=407670789]
+position = Vector2(792, 384.62964)
+rotation = 1.5707964
+scale = Vector2(10.5, 1)
+texture = ExtResource("11_54u3l")
+
+[node name="UiTravelBookFill01b2" type="Sprite2D" parent="." unique_id=1532069979]
+position = Vector2(798, 435.62964)
+rotation = 3.1415927
+scale = Vector2(12.815, 1)
+texture = SubResource("CompressedTexture2D_05gro")
+
+[node name="Label6" type="Label" parent="." unique_id=1095292334]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -120.0
+offset_right = 131.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "INGREDITENTS"
+label_settings = SubResource("LabelSettings_o3d7r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=695466221]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 176.0
+offset_top = -120.0
+offset_right = 323.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ALLERGENS"
+label_settings = SubResource("LabelSettings_o3d7r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="." unique_id=944737232]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = 88.0
+offset_right = 131.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "IN SEASON"
+label_settings = SubResource("LabelSettings_o3d7r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="." unique_id=596870913]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 176.0
+offset_top = 88.0
+offset_right = 323.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PRICE"
+label_settings = SubResource("LabelSettings_o3d7r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="." unique_id=127910822]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -88.0
+offset_right = 120.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Peach
+Egg
+Cheese
+Tofu"
+label_settings = SubResource("LabelSettings_1hpku")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="." unique_id=1829139828]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = -88.0
+offset_right = 304.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Eggs
+Dairy
+Soy"
+label_settings = SubResource("LabelSettings_1hpku")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="." unique_id=684250096]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 120.0
+offset_right = 120.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Summer"
+label_settings = SubResource("LabelSettings_1hpku")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label13" type="Label" parent="." unique_id=387777286]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = 120.0
+offset_right = 304.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "₱ 100"
+label_settings = SubResource("LabelSettings_1hpku")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=696067150]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -7.0
+offset_right = 18.0
+offset_bottom = 7.0
+grow_vertical = 2
+scale = Vector2(8.58, 8.58)
+icon = ExtResource("16_jw3yi")

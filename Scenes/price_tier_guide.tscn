@@ -1,0 +1,532 @@
+[gd_scene format=3 uid="uid://ds3rm8h6rb2is"]
+
+[ext_resource type="Texture2D" uid="uid://bdg4agjrxm8xn" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="1_olfvh"]
+[ext_resource type="Texture2D" uid="uid://bvarq4uxypsyk" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="2_xwwlv"]
+[ext_resource type="Texture2D" uid="uid://ditdbvwjo7p17" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Fill01a.png" id="3_7txn0"]
+[ext_resource type="Texture2D" uid="uid://b1ktnmsxyxxob" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Slot01b.png" id="4_mxwpr"]
+[ext_resource type="Texture2D" uid="uid://cuv5jjau6u6vb" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="5_clarn"]
+[ext_resource type="Texture2D" uid="uid://bubuc3ad8hjnw" path="res://Assets/UI assets pack 2/UI books & more.png" id="6_f0252"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c52pd"]
+font_size = 45
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_blq3n"]
+font_size = 21
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_olfvh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_30jko"]
+font_size = 25
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5eijx"]
+font_size = 15
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4eppf"]
+paragraph_spacing = 9.335
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t46ed"]
+font_size = 15
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[node name="PriceTierGuide" type="Control" unique_id=1711609148]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PriceTierGuidePanel" type="Control" parent="." unique_id=1077896594]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PriceTierGuideMainBG" type="TextureRect" parent="PriceTierGuidePanel" unique_id=1381784264]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -516.25
+offset_top = -289.0
+offset_right = 516.25
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_olfvh")
+
+[node name="PriceTierGuidePaper" type="NinePatchRect" parent="PriceTierGuidePanel" unique_id=1676673982]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -260.0
+offset_right = 480.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xwwlv")
+region_rect = Rect2(0, 0, 62, 30)
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 6
+patch_margin_bottom = 7
+
+[node name="TopSection" type="Control" parent="PriceTierGuidePanel" unique_id=1074283207]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -454.0
+offset_top = -240.0
+offset_right = 458.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PriceTierGuidePanel/TopSection" unique_id=698569726]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReferenceTitle" type="Label" parent="PriceTierGuidePanel/TopSection" unique_id=863192574]
+layout_mode = 1
+offset_right = 473.0
+offset_bottom = 46.0
+text = "PRICE TIER GUIDE"
+label_settings = SubResource("LabelSettings_c52pd")
+
+[node name="ReferenceDescription" type="Label" parent="PriceTierGuidePanel/TopSection" unique_id=389853928]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 5.0
+offset_right = 446.0
+offset_bottom = 27.0
+grow_vertical = 2
+text = "Official price tiers for all menu items."
+label_settings = SubResource("LabelSettings_blq3n")
+
+[node name="TopDivider" type="TextureRect" parent="PriceTierGuidePanel/TopSection" unique_id=532766834]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -460.0
+offset_top = -2.0
+offset_right = 460.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_7txn0")
+
+[node name="CloseButton" type="Button" parent="PriceTierGuidePanel/TopSection" unique_id=859393088]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 51.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_olfvh")
+flat = true
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PriceTierGuidePanel/TopSection/CloseButton" unique_id=2068164217]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = ExtResource("4_mxwpr")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="PriceTierGuidePanel/TopSection/CloseButton" unique_id=1221554005]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("5_clarn")
+
+[node name="MiddleSection" type="Control" parent="PriceTierGuidePanel" unique_id=1176355428]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -424.0
+offset_top = -136.0
+offset_right = 424.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PriceTierGuidePanel/MiddleSection" unique_id=286737315]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TierAFrameContainer" type="Control" parent="PriceTierGuidePanel/MiddleSection" unique_id=1879918102]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -32.0
+offset_top = -4.0
+offset_right = 256.0
+offset_bottom = 356.0
+metadata/_edit_group_ = true
+
+[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/TierAFrameContainer" unique_id=813359341]
+layout_mode = 0
+offset_right = 115.19999
+offset_bottom = 142.4
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_f0252")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+
+[node name="TierAFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/TierAFrameContainer" unique_id=1186879546]
+visible = false
+layout_mode = 0
+offset_right = 89.30232
+offset_bottom = 111.6279
+scale = Vector2(3.225, 3.225)
+texture = ExtResource("6_f0252")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="TierALabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/TierAFrameContainer" unique_id=1252734048]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 18.0
+offset_right = 49.0
+offset_bottom = 44.0
+grow_horizontal = 2
+text = "TIER A"
+label_settings = SubResource("LabelSettings_30jko")
+horizontal_alignment = 1
+
+[node name="TierAPriceRange" type="Label" parent="PriceTierGuidePanel/MiddleSection/TierAFrameContainer" unique_id=414140375]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 43.0
+offset_right = 49.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "₱100 – ₱499"
+label_settings = SubResource("LabelSettings_5eijx")
+horizontal_alignment = 1
+
+[node name="TierADishList" type="Label" parent="PriceTierGuidePanel/MiddleSection/TierAFrameContainer" unique_id=1303019981]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -110.0
+offset_right = 120.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "• Classic Egg Noodle 
+• Corn Chicken Noodle
+• Pumpkin Tofu Noodle 
+• Kale Pork Ramen 
+• Classic Egg Pudding
+• Strawberry Parfait 
+• Peach Cream Pudding "
+label_settings = SubResource("LabelSettings_4eppf")
+autowrap_mode = 3
+
+[node name="TierBFrameContainer" type="Control" parent="PriceTierGuidePanel/MiddleSection" unique_id=1588376574]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 288.0
+offset_top = -4.0
+offset_right = 576.0
+offset_bottom = 356.0
+metadata/_edit_group_ = true
+
+[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/TierBFrameContainer" unique_id=1420179382]
+layout_mode = 0
+offset_right = 115.19999
+offset_bottom = 142.4
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_f0252")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+
+[node name="TierBFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/TierBFrameContainer" unique_id=805688830]
+visible = false
+layout_mode = 0
+offset_right = 89.30232
+offset_bottom = 111.6279
+scale = Vector2(3.225, 3.225)
+texture = ExtResource("6_f0252")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="TierBLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/TierBFrameContainer" unique_id=860419401]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 18.0
+offset_right = 49.0
+offset_bottom = 44.0
+grow_horizontal = 2
+text = "TIER B"
+label_settings = SubResource("LabelSettings_30jko")
+horizontal_alignment = 1
+
+[node name="TierBPriceRange" type="Label" parent="PriceTierGuidePanel/MiddleSection/TierBFrameContainer" unique_id=1260450797]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 43.0
+offset_right = 49.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "₱500 – 999"
+label_settings = SubResource("LabelSettings_5eijx")
+horizontal_alignment = 1
+
+[node name="TierBDishList" type="Label" parent="PriceTierGuidePanel/MiddleSection/TierBFrameContainer" unique_id=420121044]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -111.5
+offset_right = 120.0
+offset_bottom = 156.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "• Carbonara
+• Clam Pasta 
+• Tomato Beef Pasta 
+• Mushroom Chicken Pasta 
+• Cherry Blossom Shrimp Rice 
+• Mackerel Asparagus Bowl
+• Winter Beef Stew
+• Chestnut Cake "
+label_settings = SubResource("LabelSettings_4eppf")
+autowrap_mode = 3
+
+[node name="TierCFrameContainer" type="Control" parent="PriceTierGuidePanel/MiddleSection" unique_id=1528253929]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 600.0
+offset_top = -4.0
+offset_right = 888.0
+offset_bottom = 356.0
+metadata/_edit_group_ = true
+
+[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/TierCFrameContainer" unique_id=1429942814]
+layout_mode = 0
+offset_right = 115.19999
+offset_bottom = 142.4
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_f0252")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+
+[node name="TierCFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/TierCFrameContainer" unique_id=1292809760]
+visible = false
+layout_mode = 0
+offset_right = 89.30232
+offset_bottom = 111.6279
+scale = Vector2(3.225, 3.225)
+texture = ExtResource("6_f0252")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="TierCLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/TierCFrameContainer" unique_id=379499823]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 18.0
+offset_right = 49.0
+offset_bottom = 44.0
+grow_horizontal = 2
+text = "TIER C"
+label_settings = SubResource("LabelSettings_30jko")
+horizontal_alignment = 1
+
+[node name="TiercPriceRange" type="Label" parent="PriceTierGuidePanel/MiddleSection/TierCFrameContainer" unique_id=485759576]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 43.0
+offset_right = 49.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "₱1,000 – ₱2,000
+
+"
+label_settings = SubResource("LabelSettings_5eijx")
+horizontal_alignment = 1
+
+[node name="TierCDishList" type="Label" parent="PriceTierGuidePanel/MiddleSection/TierCFrameContainer" unique_id=660960713]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -110.0
+offset_right = 120.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "• Scallop Bok Choy Bowl 
+• Snow Crab Kale Stew 
+• Classic Beef Plate 
+• Tomato Glazed Beef
+• Truffle Mushroom Beef"
+label_settings = SubResource("LabelSettings_4eppf")
+autowrap_mode = 3
+
+[node name="BottomSection" type="Control" parent="PriceTierGuidePanel" unique_id=472386883]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -456.0
+offset_top = 192.0
+offset_right = 464.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PriceTierGuidePanel/BottomSection" unique_id=28644414]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AllYearMonth2" type="Label" parent="PriceTierGuidePanel/BottomSection" unique_id=288502187]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -383.0
+offset_top = 12.5
+offset_right = 383.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tier Key: A: Budget | B: Standard | C: Premium"
+label_settings = SubResource("LabelSettings_t46ed")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PriceTierGuidePanel/BottomSection" unique_id=271337240]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 8.0
+grow_vertical = 2

@@ -1,0 +1,692 @@
+[gd_scene format=3 uid="uid://bhocxtgfd2f5l"]
+
+[ext_resource type="Texture2D" uid="uid://bdg4agjrxm8xn" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="1_uvlue"]
+[ext_resource type="Texture2D" uid="uid://bvarq4uxypsyk" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="2_mvnvd"]
+[ext_resource type="Texture2D" uid="uid://ditdbvwjo7p17" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Fill01a.png" id="3_bf2dd"]
+[ext_resource type="Texture2D" uid="uid://b1ktnmsxyxxob" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Slot01b.png" id="4_lomsf"]
+[ext_resource type="Texture2D" uid="uid://cuv5jjau6u6vb" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="5_7cpv1"]
+[ext_resource type="Texture2D" uid="uid://bubuc3ad8hjnw" path="res://Assets/UI assets pack 2/UI books & more.png" id="6_kh4x2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kdg2t"]
+font_size = 45
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nvxmo"]
+font_size = 21
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uvlue"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_paoy5"]
+font_size = 25
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s0ivo"]
+font_size = 14
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v6tbf"]
+paragraph_spacing = 9.335
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_58qot"]
+font_size = 15
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[node name="PeakSeasonGuide" type="Control" unique_id=1658345681]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PeakSeasonPanel" type="Control" parent="." unique_id=1873867891]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PeakSeasonMainBG" type="TextureRect" parent="PeakSeasonPanel" unique_id=637974331]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -516.25
+offset_top = -289.0
+offset_right = 516.25
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uvlue")
+
+[node name="PeakSeasonPaper" type="NinePatchRect" parent="PeakSeasonPanel" unique_id=385929931]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -260.0
+offset_right = 480.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mvnvd")
+region_rect = Rect2(0, 0, 62, 30)
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 6
+patch_margin_bottom = 7
+
+[node name="TopSection" type="Control" parent="PeakSeasonPanel" unique_id=44585326]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -454.0
+offset_top = -240.0
+offset_right = 458.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PeakSeasonPanel/TopSection" unique_id=1777618827]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReferenceTitle" type="Label" parent="PeakSeasonPanel/TopSection" unique_id=945934677]
+layout_mode = 1
+offset_right = 473.0
+offset_bottom = 46.0
+text = "PEAK SEASON GUIDE"
+label_settings = SubResource("LabelSettings_kdg2t")
+
+[node name="ReferenceDescription" type="Label" parent="PeakSeasonPanel/TopSection" unique_id=655172305]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 5.0
+offset_right = 446.0
+offset_bottom = 27.0
+grow_vertical = 2
+text = "Check which dishes are in their peak season"
+label_settings = SubResource("LabelSettings_nvxmo")
+
+[node name="TopDivider" type="TextureRect" parent="PeakSeasonPanel/TopSection" unique_id=614396516]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -460.0
+offset_top = -2.0
+offset_right = 460.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_bf2dd")
+
+[node name="CloseButton" type="Button" parent="PeakSeasonPanel/TopSection" unique_id=1308821860]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 51.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_uvlue")
+flat = true
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PeakSeasonPanel/TopSection/CloseButton" unique_id=1279694174]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = ExtResource("4_lomsf")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="PeakSeasonPanel/TopSection/CloseButton" unique_id=213821008]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("5_7cpv1")
+
+[node name="MiddleSection" type="Control" parent="PeakSeasonPanel" unique_id=442925442]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -424.0
+offset_top = -136.0
+offset_right = 424.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PeakSeasonPanel/MiddleSection" unique_id=496707646]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpringFrameContainer" type="Control" parent="PeakSeasonPanel/MiddleSection" unique_id=1691866732]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -32.0
+offset_right = 144.0
+offset_bottom = 312.0
+metadata/_edit_group_ = true
+
+[node name="Frame" type="NinePatchRect" parent="PeakSeasonPanel/MiddleSection/SpringFrameContainer" unique_id=767195548]
+layout_mode = 0
+offset_right = 70.39999
+offset_bottom = 124.8
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_kh4x2")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="SpringFrame" type="NinePatchRect" parent="PeakSeasonPanel/MiddleSection/SpringFrameContainer" unique_id=166989002]
+visible = false
+layout_mode = 0
+offset_right = 54.573647
+offset_bottom = 96.74419
+scale = Vector2(3.225, 3.225)
+texture = ExtResource("6_kh4x2")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="SpringLabel" type="Label" parent="PeakSeasonPanel/MiddleSection/SpringFrameContainer" unique_id=920234047]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 18.0
+offset_right = 49.0
+offset_bottom = 44.0
+grow_horizontal = 2
+text = "SPRING"
+label_settings = SubResource("LabelSettings_paoy5")
+horizontal_alignment = 1
+
+[node name="SpringMonth" type="Label" parent="PeakSeasonPanel/MiddleSection/SpringFrameContainer" unique_id=153053098]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 43.0
+offset_right = 49.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "Mar - May"
+label_settings = SubResource("LabelSettings_s0ivo")
+horizontal_alignment = 1
+
+[node name="SpringDishList" type="Label" parent="PeakSeasonPanel/MiddleSection/SpringFrameContainer" unique_id=1748650959]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -87.0
+offset_right = 72.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "• Clam Pasta
+• Cherry Blossom Shrimp Rice
+• Mackerel Asparagus Bowl
+• Strawberry Parfait"
+label_settings = SubResource("LabelSettings_v6tbf")
+autowrap_mode = 3
+
+[node name="SummerFrameContainer" type="Control" parent="PeakSeasonPanel/MiddleSection" unique_id=2002626749]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 154.0
+offset_right = 330.0
+offset_bottom = 312.0
+metadata/_edit_group_ = true
+
+[node name="Frame" type="NinePatchRect" parent="PeakSeasonPanel/MiddleSection/SummerFrameContainer" unique_id=48061934]
+layout_mode = 0
+offset_right = 70.39999
+offset_bottom = 124.8
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_kh4x2")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="SummerFrame" type="NinePatchRect" parent="PeakSeasonPanel/MiddleSection/SummerFrameContainer" unique_id=1222959601]
+visible = false
+layout_mode = 0
+offset_right = 54.573647
+offset_bottom = 96.74419
+scale = Vector2(3.225, 3.225)
+texture = ExtResource("6_kh4x2")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="SummerLabel" type="Label" parent="PeakSeasonPanel/MiddleSection/SummerFrameContainer" unique_id=1344186829]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 18.0
+offset_right = 49.0
+offset_bottom = 44.0
+grow_horizontal = 2
+text = "SUMMER"
+label_settings = SubResource("LabelSettings_paoy5")
+horizontal_alignment = 1
+
+[node name="SummerMonth" type="Label" parent="PeakSeasonPanel/MiddleSection/SummerFrameContainer" unique_id=1731768607]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 43.0
+offset_right = 49.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "Jun - Aug"
+label_settings = SubResource("LabelSettings_s0ivo")
+horizontal_alignment = 1
+
+[node name="SummerDishList" type="Label" parent="PeakSeasonPanel/MiddleSection/SummerFrameContainer" unique_id=786214212]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -89.5
+offset_right = 72.0
+offset_bottom = 114.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "• Tomato Beef Pasta
+• Corn Chicken Noodle
+• Tomato Glazed Beef
+• Peach Cream Pudding"
+label_settings = SubResource("LabelSettings_v6tbf")
+autowrap_mode = 3
+
+[node name="AutumnFrameContainer" type="Control" parent="PeakSeasonPanel/MiddleSection" unique_id=2057604943]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 340.0
+offset_right = 516.0
+offset_bottom = 312.0
+metadata/_edit_group_ = true
+
+[node name="Frame" type="NinePatchRect" parent="PeakSeasonPanel/MiddleSection/AutumnFrameContainer" unique_id=288841904]
+layout_mode = 0
+offset_right = 70.39999
+offset_bottom = 124.8
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_kh4x2")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="AutumnFrame" type="NinePatchRect" parent="PeakSeasonPanel/MiddleSection/AutumnFrameContainer" unique_id=1633873440]
+visible = false
+layout_mode = 0
+offset_right = 54.573647
+offset_bottom = 96.74419
+scale = Vector2(3.225, 3.225)
+texture = ExtResource("6_kh4x2")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="AutumnLabel" type="Label" parent="PeakSeasonPanel/MiddleSection/AutumnFrameContainer" unique_id=1444670455]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 18.0
+offset_right = 49.0
+offset_bottom = 44.0
+grow_horizontal = 2
+text = "AUTUMN"
+label_settings = SubResource("LabelSettings_paoy5")
+horizontal_alignment = 1
+
+[node name="AutumnMonth" type="Label" parent="PeakSeasonPanel/MiddleSection/AutumnFrameContainer" unique_id=818987555]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 43.0
+offset_right = 49.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "Sep - Nov"
+label_settings = SubResource("LabelSettings_s0ivo")
+horizontal_alignment = 1
+
+[node name="AutumnDishList" type="Label" parent="PeakSeasonPanel/MiddleSection/AutumnFrameContainer" unique_id=2027407019]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -87.0
+offset_right = 72.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "• Mushroom Chicken Pasta
+• Pumpkin Tofu Noodle
+• Truffle Mushroom Beef
+• Chestnut Cake"
+label_settings = SubResource("LabelSettings_v6tbf")
+autowrap_mode = 3
+
+[node name="WinterFrameContainer" type="Control" parent="PeakSeasonPanel/MiddleSection" unique_id=2092128949]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 526.0
+offset_right = 702.0
+offset_bottom = 312.0
+metadata/_edit_group_ = true
+
+[node name="Frame" type="NinePatchRect" parent="PeakSeasonPanel/MiddleSection/WinterFrameContainer" unique_id=368631580]
+layout_mode = 0
+offset_right = 70.39999
+offset_bottom = 124.8
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_kh4x2")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="WinterFrame" type="NinePatchRect" parent="PeakSeasonPanel/MiddleSection/WinterFrameContainer" unique_id=1956777655]
+visible = false
+layout_mode = 0
+offset_right = 54.573647
+offset_bottom = 96.74419
+scale = Vector2(3.225, 3.225)
+texture = ExtResource("6_kh4x2")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="WinterLabel" type="Label" parent="PeakSeasonPanel/MiddleSection/WinterFrameContainer" unique_id=1998773070]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 18.0
+offset_right = 49.0
+offset_bottom = 44.0
+grow_horizontal = 2
+text = "WINTER"
+label_settings = SubResource("LabelSettings_paoy5")
+horizontal_alignment = 1
+
+[node name="WinterMonth" type="Label" parent="PeakSeasonPanel/MiddleSection/WinterFrameContainer" unique_id=941925844]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 43.0
+offset_right = 49.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "Dec - Feb"
+label_settings = SubResource("LabelSettings_s0ivo")
+horizontal_alignment = 1
+
+[node name="WinterDishList" type="Label" parent="PeakSeasonPanel/MiddleSection/WinterFrameContainer" unique_id=1817894863]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -87.0
+offset_right = 72.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "• Kale Pork Ramen
+• Scallop Bok Choy Bowl
+• Snow Crab Kale Stew
+• Winter Beef Stew"
+label_settings = SubResource("LabelSettings_v6tbf")
+autowrap_mode = 3
+
+[node name="AllYearFrameContainer" type="Control" parent="PeakSeasonPanel/MiddleSection" unique_id=91695071]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 712.0
+offset_right = 888.0
+offset_bottom = 312.0
+metadata/_edit_group_ = true
+
+[node name="Frame" type="NinePatchRect" parent="PeakSeasonPanel/MiddleSection/AllYearFrameContainer" unique_id=74030755]
+layout_mode = 0
+offset_right = 70.39999
+offset_bottom = 124.8
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_kh4x2")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="AllYearFrame" type="NinePatchRect" parent="PeakSeasonPanel/MiddleSection/AllYearFrameContainer" unique_id=1962163081]
+visible = false
+layout_mode = 0
+offset_right = 54.573647
+offset_bottom = 96.74419
+scale = Vector2(3.225, 3.225)
+texture = ExtResource("6_kh4x2")
+region_rect = Rect2(16, 384, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+
+[node name="AllYearLabel" type="Label" parent="PeakSeasonPanel/MiddleSection/AllYearFrameContainer" unique_id=1839820318]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 18.0
+offset_right = 49.0
+offset_bottom = 44.0
+grow_horizontal = 2
+text = "ALL YEAR"
+label_settings = SubResource("LabelSettings_paoy5")
+horizontal_alignment = 1
+
+[node name="AllYearMonth" type="Label" parent="PeakSeasonPanel/MiddleSection/AllYearFrameContainer" unique_id=1117432744]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 43.0
+offset_right = 49.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "March - May"
+label_settings = SubResource("LabelSettings_s0ivo")
+horizontal_alignment = 1
+
+[node name="AllYearDishList" type="Label" parent="PeakSeasonPanel/MiddleSection/AllYearFrameContainer" unique_id=800280854]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -87.0
+offset_right = 72.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "• Carbonara
+• Classic Egg Noodle
+• Classic Beef Plate
+• Classic Egg Pudding"
+label_settings = SubResource("LabelSettings_v6tbf")
+autowrap_mode = 3
+
+[node name="BottomSection" type="Control" parent="PeakSeasonPanel" unique_id=1739910449]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -456.0
+offset_top = 192.0
+offset_right = 464.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PeakSeasonPanel/BottomSection" unique_id=2061684279]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AllYearMonth2" type="Label" parent="PeakSeasonPanel/BottomSection" unique_id=1127869380]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -383.0
+offset_top = -7.5
+offset_right = 383.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Note: These dishes reach peak quality and popularity during the listed season. Availability may vary by supplier and region."
+label_settings = SubResource("LabelSettings_58qot")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PeakSeasonPanel/BottomSection" unique_id=808260767]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 8.0
+grow_vertical = 2

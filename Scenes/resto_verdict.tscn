@@ -1,0 +1,498 @@
+[gd_scene format=3 uid="uid://bvtapggov86l4"]
+
+[ext_resource type="Texture2D" uid="uid://c2re75u44egf4" path="res://Assets/Background/5.png" id="1_1x4vo"]
+[ext_resource type="Texture2D" uid="uid://dv4fc5g7gp78v" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_BookPageLeft01a.png" id="1_14duo"]
+[ext_resource type="Texture2D" uid="uid://ditdbvwjo7p17" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Fill01a.png" id="2_1x4vo"]
+[ext_resource type="Texture2D" uid="uid://cebb1p0vxyken" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01a.png" id="3_aoj1m"]
+[ext_resource type="Texture2D" uid="uid://b1ktnmsxyxxob" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Slot01b.png" id="4_cr8d2"]
+[ext_resource type="Texture2D" uid="uid://cuv5jjau6u6vb" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="5_mq46b"]
+[ext_resource type="Texture2D" uid="uid://bubuc3ad8hjnw" path="res://Assets/UI assets pack 2/UI books & more.png" id="6_l3fwf"]
+[ext_resource type="PackedScene" uid="uid://bvneg8a4ky64p" path="res://Scenes/dish_report_popup.tscn" id="8_aoj1m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjvj0"]
+font_size = 65
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+outline_size = 1
+outline_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_auh38"]
+font_size = 35
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eeq64"]
+font_size = 21
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+shadow_size = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0dj8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cr8d2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yt56x"]
+font_size = 25
+shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ijkaj"]
+line_spacing = -0.095
+font_size = 90
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yei4u"]
+line_spacing = -0.095
+font_size = 24
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hfxto"]
+line_spacing = -0.095
+font_size = 17
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qe1k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ofs80"]
+font_size = 35
+shadow_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_ahxk1"]
+font_size = 35
+shadow_size = 2
+
+[node name="RestoVerdict" type="Control" unique_id=1319883029]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=251974359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1x4vo")
+expand_mode = 1
+
+[node name="DishReportPanel" type="Control" parent="." unique_id=479253786]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, -184)
+
+[node name="PanelBG" type="TextureRect" parent="DishReportPanel" unique_id=1265650880]
+texture_filter = 1
+layout_mode = 1
+offset_left = -428.0
+offset_top = 257.50003
+offset_right = 119.20001
+offset_bottom = 1078.9
+rotation = -1.5707964
+pivot_offset = Vector2(17.645, 0)
+mouse_filter = 2
+texture = ExtResource("1_14duo")
+expand_mode = 1
+
+[node name="TopSection" type="Control" parent="DishReportPanel" unique_id=992481019]
+anchors_preset = 0
+offset_left = -388.0
+offset_top = -251.0
+offset_right = 352.0
+offset_bottom = -168.0
+
+[node name="TitleContainer" type="Control" parent="DishReportPanel/TopSection" unique_id=1805637390]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RestaurantNameLabel" type="Label" parent="DishReportPanel/TopSection/TitleContainer" unique_id=1664278061]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = -32.0
+offset_right = 274.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Roswell Restaurant"
+label_settings = SubResource("LabelSettings_gjvj0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopDivider" type="TextureRect" parent="DishReportPanel/TopSection/TitleContainer" unique_id=2092733330]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -2.0
+offset_right = 360.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_1x4vo")
+
+[node name="DishNameLabel" type="Label" parent="DishReportPanel/TopSection/TitleContainer" unique_id=604536474]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -205.5
+offset_top = 85.0
+offset_right = 205.5
+offset_bottom = 121.0
+grow_horizontal = 2
+text = "Final Verdict"
+label_settings = SubResource("LabelSettings_auh38")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="DishReportPanel/TopSection" unique_id=1267326053]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DishCounterBG" type="TextureRect" parent="DishReportPanel/TopSection" unique_id=100784183]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -22.5
+offset_right = 148.0
+offset_bottom = 16.0
+grow_vertical = 2
+texture = ExtResource("3_aoj1m")
+metadata/_edit_group_ = true
+
+[node name="DishCounterLabel" type="Label" parent="DishReportPanel/TopSection" unique_id=1834643697]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -15.25
+offset_right = -232.0
+offset_bottom = 8.75
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dish 1 of 5"
+label_settings = SubResource("LabelSettings_eeq64")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="CloseButton" type="Button" parent="DishReportPanel/TopSection" unique_id=414004817]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 51.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_u0dj8")
+flat = true
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="DishReportPanel/TopSection/CloseButton" unique_id=408007133]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = ExtResource("4_cr8d2")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="DishReportPanel/TopSection/CloseButton" unique_id=797721027]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("5_mq46b")
+
+[node name="InvestigationSummary2" type="Control" parent="DishReportPanel/TopSection" unique_id=2067478362]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -334.0
+offset_top = 73.5
+offset_right = 322.0
+offset_bottom = 313.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="DishReportPanel/TopSection/InvestigationSummary2" unique_id=1137812669]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6627451, 1, 1, 1)
+
+[node name="Frame" type="Control" parent="DishReportPanel/TopSection/InvestigationSummary2" unique_id=1566806929]
+anchors_preset = 0
+offset_left = -400.0
+offset_top = 10.0
+offset_right = -360.0
+offset_bottom = 50.0
+
+[node name="MainFrame" type="NinePatchRect" parent="DishReportPanel/TopSection/InvestigationSummary2/Frame" unique_id=908472463]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 516.8
+offset_top = 75.6
+offset_right = 779.19995
+offset_bottom = 171.6
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+pivot_offset = Vector2(91.2, 70.4)
+texture = ExtResource("6_l3fwf")
+region_rect = Rect2(16, 272, 32, 16)
+patch_margin_left = 6
+patch_margin_top = 4
+patch_margin_right = 6
+patch_margin_bottom = 4
+
+[node name="VerdictStamp" type="TextureRect" parent="DishReportPanel/TopSection/InvestigationSummary2/Frame/MainFrame" unique_id=2139268071]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.10861
+offset_top = -35.703117
+offset_right = 96.10861
+offset_bottom = 35.703117
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_cr8d2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TitleFrame" type="NinePatchRect" parent="DishReportPanel/TopSection/InvestigationSummary2/Frame" unique_id=1896737695]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 650.45
+offset_top = -20.415009
+offset_right = 790.45
+offset_bottom = 1.5849991
+grow_horizontal = 2
+scale = Vector2(2.235, 2.235)
+pivot_offset = Vector2(70, 11)
+texture = ExtResource("6_l3fwf")
+region_rect = Rect2(80, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Title" type="Label" parent="DishReportPanel/TopSection/InvestigationSummary2/Frame" unique_id=427426438]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 594.95
+offset_top = -20.415009
+offset_right = 845.95
+offset_bottom = 5.5849915
+grow_horizontal = 2
+text = "FINAL VERDICT"
+label_settings = SubResource("LabelSettings_yt56x")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Label3" type="Label" parent="DishReportPanel/TopSection/InvestigationSummary2" unique_id=2083179186]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.625
+offset_top = -73.5
+offset_right = 102.625
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "85%"
+label_settings = SubResource("LabelSettings_ijkaj")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="DishReportPanel/TopSection/InvestigationSummary2" unique_id=1185914355]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.92
+offset_top = 51.0
+offset_right = 156.08002
+offset_bottom = 75.0
+grow_horizontal = 2
+text = "--- FINAL ACCURACY ---"
+label_settings = SubResource("LabelSettings_yei4u")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="DishReportPanel/TopSection/InvestigationSummary2" unique_id=1671758533]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.92
+offset_top = 183.0
+offset_right = 156.08002
+offset_bottom = 219.0
+grow_horizontal = 2
+text = "Final accuracy based on restaurant verdicts."
+label_settings = SubResource("LabelSettings_hfxto")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BottomSection" type="Control" parent="DishReportPanel" unique_id=118091877]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -344.0
+offset_top = 128.0
+offset_right = 304.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="DishReportPanel/BottomSection" unique_id=1101862917]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClearToOperateButton" type="Button" parent="DishReportPanel/BottomSection" unique_id=297009626]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -336.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8qe1k")
+flat = true
+metadata/_edit_group_ = true
+
+[node name="Frame" type="NinePatchRect" parent="DishReportPanel/BottomSection/ClearToOperateButton" unique_id=1577183404]
+layout_mode = 1
+offset_right = 96.43411
+offset_bottom = 32.248062
+scale = Vector2(3.225, 3.225)
+texture = ExtResource("6_l3fwf")
+region_rect = Rect2(288, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+
+[node name="Label" type="Label" parent="DishReportPanel/BottomSection/ClearToOperateButton" unique_id=2007927068]
+layout_mode = 1
+offset_right = 311.0
+offset_bottom = 104.0
+text = "Clear to Operate"
+label_settings = SubResource("LabelSettings_ofs80")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShutDownButton" type="Button" parent="DishReportPanel/BottomSection" unique_id=676719316]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 344.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8qe1k")
+flat = true
+metadata/_edit_group_ = true
+
+[node name="Frame" type="NinePatchRect" parent="DishReportPanel/BottomSection/ShutDownButton" unique_id=685901083]
+layout_mode = 1
+offset_right = 96.43408
+offset_bottom = 32.248062
+scale = Vector2(3.225, 3.225)
+texture = ExtResource("6_l3fwf")
+region_rect = Rect2(160, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+
+[node name="Label" type="Label" parent="DishReportPanel/BottomSection/ShutDownButton" unique_id=1136604387]
+layout_mode = 1
+offset_right = 311.0
+offset_bottom = 104.0
+text = "Shut Down"
+label_settings = SubResource("LabelSettings_ahxk1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DishReportPopup" parent="." unique_id=1541105910 instance=ExtResource("8_aoj1m")]
+visible = false
+layout_mode = 1
