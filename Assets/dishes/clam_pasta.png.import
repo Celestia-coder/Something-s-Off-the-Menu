@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbauvwomrs407"
-path="res://.godot/imported/pudding.png-dd52e20fa4e98569925302f52b7aef12.ctex"
+uid="uid://cfra8rbr8044o"
+path="res://.godot/imported/clam_pasta.png-f861900da392493d04aad06956175678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dish Images/pudding.png"
-dest_files=["res://.godot/imported/pudding.png-dd52e20fa4e98569925302f52b7aef12.ctex"]
+source_file="res://Assets/dishes/clam_pasta.png"
+dest_files=["res://.godot/imported/clam_pasta.png-f861900da392493d04aad06956175678.ctex"]
 
 [params]
 

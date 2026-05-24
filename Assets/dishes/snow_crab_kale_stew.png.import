@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dba8j1ryqy77x"
-path="res://.godot/imported/peach.png-cf36b3c175aad537dbe8d000912f486a.ctex"
+uid="uid://bruejwdbxfxs5"
+path="res://.godot/imported/snow_crab_kale_stew.png-ff5c45f282a95b03af1d2938a07e8546.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dish Images/peach.png"
-dest_files=["res://.godot/imported/peach.png-cf36b3c175aad537dbe8d000912f486a.ctex"]
+source_file="res://Assets/dishes/snow_crab_kale_stew.png"
+dest_files=["res://.godot/imported/snow_crab_kale_stew.png-ff5c45f282a95b03af1d2938a07e8546.ctex"]
 
 [params]
 
