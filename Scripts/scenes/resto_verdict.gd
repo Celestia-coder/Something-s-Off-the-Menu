@@ -15,6 +15,7 @@ var pending_verdict = ""
 @onready var clear_btn = $DishReportPanel/BottomSection/ClearToOperateButton
 @onready var shutdown_btn = $DishReportPanel/BottomSection/ShutDownButton
 @onready var left_btn = $LeftNextButton
+@onready var right_btn = $RightNextButton
 
 func _ready():
 	close_btn.pressed.connect(_on_close)
@@ -23,10 +24,12 @@ func _ready():
 	yes_btn.pressed.connect(_on_yes)
 	no_btn.pressed.connect(_on_no)
 	left_btn.pressed.connect(_on_left)
+	right_btn.pressed.connect(_on_right)
 
-	# hide stamp and confirmation by default
+	# hide stamp, confirmation, and right arrow by default
 	verdict_stamp.hide()
 	confirmation.hide()
+	right_btn.hide()
 
 	# set resto name
 	#var resto = GameState.get_current_resto()
@@ -59,6 +62,9 @@ func _on_yes():
 	clear_btn.disabled = true
 	shutdown_btn.disabled = true
 
+	# show right arrow now that verdict is stamped
+	right_btn.show()
+
 	# save verdict to gamestate
 	#GameState.save_verdict(pending_verdict)
 
@@ -75,5 +81,23 @@ func _on_left():
 		dish_report_ref.load_dish(4)
 		dish_report_ref.show()
 
+func _on_right():
+	if not GameState.is_last_resto():
+		# more restos left, unlock next and open fresh dish report
+		GameState.unlock_next_resto()
+		hide()
+		if dish_report_ref:
+			dish_report_ref.open()
+			dish_report_ref.show()
+	else:
+		# last resto of the day, end the day
+		GameState.advance_day()
+		hide()
+		_end_day()
+
+func _end_day():
+	# placeholder for fade out / next day transition
+	print("Day ended. Now on day: ", GameState.current_day)
+
 func _on_close():
-	hide()
+	queue_free()
