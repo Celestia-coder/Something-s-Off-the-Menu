@@ -11,6 +11,7 @@ var day_timers = {
 
 var time_remaining = 0
 var timer_running = false
+var dish_report_ref = null
 
 @onready var day_label = $DayLabel
 @onready var timer_label = $TimerLabel
@@ -26,6 +27,10 @@ func _ready():
 	peak_season_btn.pressed.connect(_on_peak_season)
 	ingredients_btn.pressed.connect(_on_ingredients)
 	price_tier_btn.pressed.connect(_on_price_tier)
+
+	# safety net in case desk loads without going through menu
+	if GameState.days.is_empty():
+		GameState.start_game()
 
 	# update day label
 	day_label.text = "DAY " + str(GameState.current_day)
@@ -67,10 +72,13 @@ func _on_option():
 	option_menu.show()
 
 func _on_folder():
-	var dish_report = load("res://Scenes/dish_report_popup.tscn").instantiate()
-	add_child(dish_report)
-	# open() is handled by _ready() test data for now
-	# once gamestate is wired, replace with dish_report.open()
+	if dish_report_ref == null or not is_instance_valid(dish_report_ref):
+		dish_report_ref = load("res://Scenes/dish_report_popup.tscn").instantiate()
+		add_child(dish_report_ref)
+		dish_report_ref.open()
+	else:
+		# reopen at the same dish the player was on
+		dish_report_ref.show()
 
 func _on_peak_season():
 	# open peak season guide as popup
