@@ -7,6 +7,8 @@ var resto_name = ""
 # stores the player's mark per dish, empty string means not yet judged
 var dish_marks = ["", "", "", "", ""]
 
+var verdict_popup_ref = null
+
 @onready var dish_name_label = $DishReportPanel/TopSection/TitleContainer/DishNameLabel
 @onready var resto_name_label = $DishReportPanel/TopSection/TitleContainer/RestaurantNameLabel
 @onready var dish_counter_label = $DishReportPanel/TopSection/DishCounterLabel
@@ -29,60 +31,15 @@ func _ready():
 	left_btn.pressed.connect(_on_left)
 	right_btn.pressed.connect(_on_right)
 
-	# TEMP TEST — remove after confirming UI works
-	dishes = [
-		{
-			"name": "Peach Cream Pudding",
-			"reported_name": "Peach Cream Pudding",
-			"reported_ingredients": ["Peach", "Egg", "Cheese", "Tofu"],
-			"reported_allergens": ["Eggs", "Dairy", "Soy"],
-			"reported_season": "Summer",
-			"reported_price": 100
-		},
-		{
-			"name": "Carbonara",
-			"reported_name": "Carbonara",
-			"reported_ingredients": ["Pasta", "Milk", "Bacon", "Cheese"],
-			"reported_allergens": ["Gluten", "Dairy"],
-			"reported_season": "All Year",
-			"reported_price": 750
-		},
-		{
-			"name": "Chestnut Cake",
-			"reported_name": "Chestnut Cake",
-			"reported_ingredients": ["Chestnut", "Egg", "Milk", "Chocolate"],
-			"reported_allergens": ["Tree Nuts", "Eggs", "Dairy"],
-			"reported_season": "Autumn",
-			"reported_price": 600
-		},
-		{
-			"name": "Kale Pork Ramen",
-			"reported_name": "Kale Pork Ramen",
-			"reported_ingredients": ["Ramen Noodles", "Pork", "Kale", "Egg"],
-			"reported_allergens": ["Gluten", "Eggs"],
-			"reported_season": "Winter",
-			"reported_price": 300
-		},
-		{
-			"name": "Mackerel Asparagus Bowl",
-			"reported_name": "Mackerel Asparagus Bowl",
-			"reported_ingredients": ["Mackerel", "Asparagus", "Rice", "Mushroom"],
-			"reported_allergens": ["Fish"],
-			"reported_season": "Spring",
-			"reported_price": 800
-		}
-	]
-	resto_name = "Roswell"
-	current_dish_index = 0
-	show()
-	load_dish(current_dish_index)
-
 func open():
+	# get current resto data from gamestate
 	var resto = GameState.get_current_resto()
 	dishes = resto.dishes
 	resto_name = resto.name
 	current_dish_index = 0
 	dish_marks = ["", "", "", "", ""]
+	# reset verdict popup ref for new resto
+	verdict_popup_ref = null
 	show()
 	load_dish(current_dish_index)
 
@@ -98,7 +55,7 @@ func load_dish(index):
 
 	# update dish info
 	dish_name_label.text = dish.reported_name.to_upper()
-	resto_name_label.text = resto_name + " Restaurant"
+	resto_name_label.text = resto_name
 	ingredients_list.text = "\n".join(dish.reported_ingredients)
 
 	if dish.reported_allergens.size() == 0 or dish.reported_allergens[0] == "None":
@@ -128,32 +85,38 @@ func _update_buttons(index):
 	left_btn.visible = index > 0
 
 	# right arrow — hidden until current dish is judged
-	# on dish 5, still shows if judged (leads to verdict popup)
 	right_btn.visible = already_judged and index < 4 or (already_judged and index == 4)
 
 func _on_verified():
 	dish_marks[current_dish_index] = "Verified"
-	#GameState.save_dish_mark(current_dish_index, "Verified")
+	GameState.save_dish_mark(current_dish_index, "Verified")
 	_update_buttons(current_dish_index)
 	status_label.text = "Status: Verified"
+	_disable_verdict_buttons()
 	if current_dish_index < 4:
 		current_dish_index += 1
 		load_dish(current_dish_index)
 	else:
-		# last dish judged, auto open verdict
 		_open_verdict()
 
 func _on_suspicious():
 	dish_marks[current_dish_index] = "Suspicious"
-	#GameState.save_dish_mark(current_dish_index, "Suspicious")
+	GameState.save_dish_mark(current_dish_index, "Suspicious")
 	_update_buttons(current_dish_index)
 	status_label.text = "Status: Suspicious"
+	_disable_verdict_buttons()
 	if current_dish_index < 4:
 		current_dish_index += 1
 		load_dish(current_dish_index)
 	else:
-		# last dish judged, auto open verdict
 		_open_verdict()
+
+func _disable_verdict_buttons():
+	verified_btn.disabled = true
+	suspicious_btn.disabled = true
+	# re-enable after 0.3 seconds
+	await get_tree().create_timer(0.3).timeout
+	_update_buttons(current_dish_index)
 
 func _on_left():
 	if current_dish_index > 0:
@@ -169,12 +132,17 @@ func _on_right():
 
 func _open_verdict():
 	hide()
-	var verdict_popup = load("res://Scenes/resto_verdict.tscn").instantiate()
-	get_tree().root.add_child(verdict_popup)
-	verdict_popup.dish_report_ref = self  # this line passes the reference
-	verdict_popup.show()
+	if verdict_popup_ref == null:
+		verdict_popup_ref = load("res://Scenes/resto_verdict.tscn").instantiate()
+		get_tree().root.add_child(verdict_popup_ref)
+		verdict_popup_ref.dish_report_ref = self
+	# restore stamp if already verdicted
+	if verdict_popup_ref.stamped_verdict != "":
+		verdict_popup_ref.clear_btn.disabled = true
+		verdict_popup_ref.shutdown_btn.disabled = true
+		verdict_popup_ref.right_btn.show()
+		verdict_popup_ref.verdict_stamp.show()
+	verdict_popup_ref.show()
 
 func _on_close():
 	hide()
-	
-	
