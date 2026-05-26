@@ -12,11 +12,19 @@ var categories = {
 # currently selected dishes based on category
 var current_dishes = []
 
+# tracks active dish index
+var active_dish_index = 0
+
+# maps category name to its button
+var category_button_map = {}
+
 @onready var pasta_btn = $IngredientsGuidePanel/MiddleSection/CategorySection/PastaButton
 @onready var desserts_btn = $IngredientsGuidePanel/MiddleSection/CategorySection/DessertsButton
 @onready var seafood_btn = $IngredientsGuidePanel/MiddleSection/CategorySection/SeafoodButton
 @onready var steaks_btn = $IngredientsGuidePanel/MiddleSection/CategorySection/SteaksButton
 @onready var noodles_btn = $IngredientsGuidePanel/MiddleSection/CategorySection/NoodlesButton
+
+@onready var category_label = $IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/CategoryLabel
 
 @onready var dish_buttons = [
 	$IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish1,
@@ -33,11 +41,20 @@ var current_dishes = []
 
 func _ready():
 	close_btn.pressed.connect(_on_close)
-	pasta_btn.pressed.connect(func(): _on_category("Pasta"))
-	desserts_btn.pressed.connect(func(): _on_category("Desserts"))
-	seafood_btn.pressed.connect(func(): _on_category("Seafood"))
-	steaks_btn.pressed.connect(func(): _on_category("Steaks"))
-	noodles_btn.pressed.connect(func(): _on_category("Noodles"))
+
+	# map category names to their buttons
+	category_button_map = {
+		"Pasta": pasta_btn,
+		"Desserts": desserts_btn,
+		"Seafood": seafood_btn,
+		"Steaks": steaks_btn,
+		"Noodles": noodles_btn
+	}
+
+	# connect category buttons
+	for cat in category_button_map:
+		var category = cat
+		category_button_map[cat].pressed.connect(func(): _on_category(category))
 
 	# connect dish buttons with their index
 	for i in range(dish_buttons.size()):
@@ -55,22 +72,47 @@ func _ready():
 func _on_category(category):
 	current_dishes = categories[category]
 
+	# update category label on the left panel
+	category_label.text = category
+
+	# toggle active/inactive frames on category buttons
+	for cat in category_button_map:
+		var btn = category_button_map[cat]
+		var is_active = cat == category
+		btn.get_node("DefaultFrame").visible = not is_active
+		btn.get_node("DefaultCategoryLabel").visible = not is_active
+		btn.get_node("ActiveFrame").visible = is_active
+		btn.get_node("ActiveCategoryLabel").visible = is_active
+
+	# update dish list buttons
 	for i in range(dish_buttons.size()):
 		if i < current_dishes.size():
-			dish_buttons[i].get_node("DishLabel").text = current_dishes[i].name
+			dish_buttons[i].get_node("DefaultDishLabel").text = current_dishes[i].name
+			dish_buttons[i].get_node("ActiveDishLabel").text = current_dishes[i].name
 			dish_buttons[i].show()
 		else:
 			dish_buttons[i].hide()
 
-	# show first dish by default when switching categories
+	# select first dish by default
 	_on_dish(0)
 
 func _on_dish(index):
 	if index >= current_dishes.size():
 		return
 
+	active_dish_index = index
 	var dish = current_dishes[index]
 
+	# toggle active/inactive frames on dish buttons
+	for i in range(dish_buttons.size()):
+		if i < current_dishes.size():
+			var is_active = i == active_dish_index
+			dish_buttons[i].get_node("DefaultFrame").visible = not is_active
+			dish_buttons[i].get_node("DefaultDishLabel").visible = not is_active
+			dish_buttons[i].get_node("ActiveFrame").visible = is_active
+			dish_buttons[i].get_node("ActiveDishLabel").visible = is_active
+
+	# update dish info panel
 	dish_title.text = dish.name
 	dish_description.text = dish.description
 	ingredients_list.text = "\n".join(dish.ingredients)
