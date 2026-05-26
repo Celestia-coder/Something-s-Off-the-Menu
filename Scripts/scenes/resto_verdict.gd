@@ -1,10 +1,8 @@
 extends Control
 
-# reference to dish report so we can go back to it
 var dish_report_ref = null
-
-# tracks which verdict the player selected before confirming
 var pending_verdict = ""
+var stamped_verdict = ""
 
 @onready var resto_name_label = $DishReportPanel/TopSection/TitleContainer/RestaurantNameLabel
 @onready var close_btn = $DishReportPanel/TopSection/CloseButton
@@ -26,14 +24,13 @@ func _ready():
 	left_btn.pressed.connect(_on_left)
 	right_btn.pressed.connect(_on_right)
 
-	# hide stamp, confirmation, and right arrow by default
 	verdict_stamp.hide()
 	confirmation.hide()
 	right_btn.hide()
 
-	# set resto name
-	#var resto = GameState.get_current_resto()
-	#resto_name_label.text = resto.name + " Restaurant"
+	# set resto name from gamestate
+	var resto = GameState.get_current_resto()
+	resto_name_label.text = resto.name
 
 func _on_clear_to_operate():
 	pending_verdict = "CLEAR TO OPERATE"
@@ -45,8 +42,8 @@ func _on_shutdown():
 
 func _on_yes():
 	confirmation.hide()
+	stamped_verdict = pending_verdict
 
-	# load the correct stamp image based on verdict
 	var stamp_path = ""
 	if pending_verdict == "CLEAR TO OPERATE":
 		stamp_path = "res://Assets/Stamps/clear_to_operate_stamp.png"
@@ -57,24 +54,19 @@ func _on_yes():
 	if texture:
 		verdict_stamp.texture = texture
 
-	# show stamp and lock verdict buttons
 	verdict_stamp.show()
 	clear_btn.disabled = true
 	shutdown_btn.disabled = true
-
-	# show right arrow now that verdict is stamped
 	right_btn.show()
 
 	# save verdict to gamestate
-	#GameState.save_verdict(pending_verdict)
+	GameState.save_verdict(pending_verdict)
 
 func _on_no():
-	# player changed their mind, hide confirmation
 	confirmation.hide()
 	pending_verdict = ""
 
 func _on_left():
-	# go back to dish report at dish 5
 	hide()
 	if dish_report_ref:
 		dish_report_ref.current_dish_index = 4
@@ -83,21 +75,21 @@ func _on_left():
 
 func _on_right():
 	if not GameState.is_last_resto():
-		# more restos left, unlock next and open fresh dish report
 		GameState.unlock_next_resto()
 		hide()
 		if dish_report_ref:
 			dish_report_ref.open()
 			dish_report_ref.show()
 	else:
-		# last resto of the day, end the day
 		GameState.advance_day()
 		hide()
 		_end_day()
 
 func _end_day():
-	# placeholder for fade out / next day transition
-	print("Day ended. Now on day: ", GameState.current_day)
+	if GameState.current_day > 5:
+		get_tree().change_scene_to_file("res://Scenes/final_evaluation.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Scenes/desk.tscn")
 
 func _on_close():
 	queue_free()
