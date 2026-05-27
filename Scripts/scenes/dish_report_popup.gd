@@ -114,8 +114,7 @@ func _on_suspicious():
 func _disable_verdict_buttons():
 	verified_btn.disabled = true
 	suspicious_btn.disabled = true
-	# re-enable after 0.3 seconds
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(1).timeout
 	_update_buttons(current_dish_index)
 
 func _on_left():
@@ -136,6 +135,7 @@ func _open_verdict():
 		verdict_popup_ref = load("res://Scenes/resto_verdict.tscn").instantiate()
 		get_tree().root.add_child(verdict_popup_ref)
 		verdict_popup_ref.dish_report_ref = self
+	
 	# restore stamp if already verdicted
 	if verdict_popup_ref.stamped_verdict != "":
 		verdict_popup_ref.clear_btn.disabled = true

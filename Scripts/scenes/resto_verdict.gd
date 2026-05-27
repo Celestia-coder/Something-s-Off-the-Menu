@@ -86,9 +86,12 @@ func _on_right():
 		_end_day()
 
 func _end_day():
+	var desk = get_tree().root.get_node("Desk")
 	if GameState.current_day > 5:
+		await desk.play_day_outro()
 		get_tree().change_scene_to_file("res://Scenes/final_evaluation.tscn")
 	else:
+		await desk.play_day_outro()
 		get_tree().change_scene_to_file("res://Scenes/desk.tscn")
 
 func _on_close():

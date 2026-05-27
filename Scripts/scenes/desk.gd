@@ -1,6 +1,5 @@
 extends Control
 
-# timer duration per day in seconds based on game mechanics
 var day_timers = {
 	1: 300,  # 5:00
 	2: 510,  # 8:30
@@ -20,6 +19,10 @@ var dish_report_ref = null
 @onready var peak_season_btn = $PeakseasonGuide
 @onready var ingredients_btn = $IngredientsGuide
 @onready var price_tier_btn = $PriceTierGuide
+@onready var fade_layer = $FadeLayer
+@onready var fade_rect = $FadeLayer/FadeRect
+@onready var day_transition_label = $FadeLayer/FadeRect/DayTransitionLabel
+@onready var time_up_label = $FadeLayer/FadeRect/TimeUpLabel 
 
 func _ready():
 	option_btn.pressed.connect(_on_option)
@@ -28,44 +31,54 @@ func _ready():
 	ingredients_btn.pressed.connect(_on_ingredients)
 	price_tier_btn.pressed.connect(_on_price_tier)
 
-	# safety net in case desk loads without going through menu
 	if GameState.days.is_empty():
 		GameState.start_game()
 
-	# update day label
 	day_label.text = "DAY " + str(GameState.current_day)
-
-	# set timer for current day
 	time_remaining = day_timers[GameState.current_day]
-	timer_running = true
 	_update_timer_label()
+
+	play_day_intro()
 
 func _process(delta):
 	if not timer_running:
 		return
-
 	time_remaining -= delta
-
 	if time_remaining <= 0:
 		time_remaining = 0
 		timer_running = false
 		_on_timer_end()
-
 	_update_timer_label()
 
 func _update_timer_label():
-	# format as MM:SS
 	var minutes = int(time_remaining) / 60
 	var seconds = int(time_remaining) % 60
 	timer_label.text = "%02d:%02d" % [minutes, seconds]
 
 func _on_timer_end():
-	# day is over, move to next day
+	timer_running = false
+	fade_layer.visible = true
+	fade_rect.color = Color(0, 0, 0, 0)
+	time_up_label.modulate.a = 1.0
+	time_up_label.visible = true
+	
+	var tween = create_tween()
+	tween.tween_property(time_up_label, "modulate:a", 1.0, 0.3)
+	await tween.finished
+	await get_tree().create_timer(1.0).timeout
+	
+	var tween_out = create_tween()
+	tween_out.tween_property(time_up_label, "modulate:a", 0.0, 0.5)
+	await tween_out.finished
+	
+	time_up_label.visible = false
+	fade_layer.visible = false
+	# ADDED end
+	
 	GameState.advance_day()
 	_end_day()
 
 func _on_option():
-	# pause game and show option menu
 	get_tree().paused = true
 	var option_menu = load("res://Scenes/option_menu.tscn").instantiate()
 	add_child(option_menu)
@@ -77,31 +90,71 @@ func _on_folder():
 		add_child(dish_report_ref)
 		dish_report_ref.open()
 	else:
-		# reopen at the same dish the player was on
 		dish_report_ref.show()
 
 func _on_peak_season():
-	# open peak season guide as popup
 	var guide = load("res://Scenes/peak_season_guide.tscn").instantiate()
 	add_child(guide)
 	guide.show()
 
 func _on_ingredients():
-	# open ingredients guide as popup
 	var guide = load("res://Scenes/ingredients_guide.tscn").instantiate()
 	add_child(guide)
 	guide.show()
 
 func _on_price_tier():
-	# open price tier guide as popup
 	var guide = load("res://Scenes/price_tier_guide.tscn").instantiate()
 	add_child(guide)
 	guide.show()
 
 func _end_day():
 	if GameState.current_day > 5:
-		# all days done, go to final evaluation
+		await play_day_outro()
 		get_tree().change_scene_to_file("res://Scenes/final_evaluation.tscn")
 	else:
-		# reload desk for the next day
+		await play_day_outro()
 		get_tree().change_scene_to_file("res://Scenes/desk.tscn")
+
+# ADDED - fade in animation when a new day starts
+func play_day_intro():
+	timer_running = false
+	fade_layer.visible = true
+	fade_rect.color = Color(0, 0, 0, 0)  # start transparent
+	
+	# text starts invisible then fades in
+	day_transition_label.text = "DAY " + str(GameState.current_day)
+	day_transition_label.modulate.a = 0.0
+	day_transition_label.visible = true
+	
+	var tween_in = create_tween()
+	tween_in.tween_property(day_transition_label, "modulate:a", 1.0, 1.0)
+	await tween_in.finished
+	
+	await get_tree().create_timer(1.0).timeout
+	
+	# text fades out
+	var tween_out = create_tween()
+	tween_out.tween_property(day_transition_label, "modulate:a", 0.0, 1.0)
+	await tween_out.finished
+	
+	day_transition_label.visible = false
+	fade_layer.visible = false
+	timer_running = true
+
+func play_day_outro():
+	timer_running = false
+	fade_layer.visible = true
+	day_transition_label.visible = false
+	
+	fade_rect.color = Color(0, 0, 0, 0) # start transparent
+	
+	# fade to black
+	var tween = create_tween()
+	tween.tween_property(fade_rect, "color:a", 1.0, 1.0)
+	await tween.finished
+	
+	# show text on black screen
+	day_transition_label.text = "DAY " + str(GameState.current_day - 1) + " ENDED"
+	day_transition_label.modulate.a = 1.0 
+	day_transition_label.visible = true
+	await get_tree().create_timer(1.5).timeout

@@ -7,15 +7,7 @@ var current_day = 1
 var current_resto_index = 0
 
 # all generated data for all 5 days
-# structure: days[day_index][resto_index] = { name, dishes, actual_status }
 var days = []
-
-# stores player progress per day per resto
-# structure: verdicts[day_index][resto_index] = {
-#     player_dish_marks: [],
-#     player_verdict: "",
-#     actual_status: ""
-# }
 var verdicts = []
 
 func start_game():
