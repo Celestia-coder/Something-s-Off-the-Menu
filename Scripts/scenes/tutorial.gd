@@ -9,7 +9,7 @@ var slides = [
 },
 {
 	"image": "res://Assets/Tutorial/slide_2.png",
-	"caption": "Each workday has a global time limit.\n\nDay 1 — 1 Folder — 5:00\nDay 2 — 2 Folders — 8:30\nDay 3 — 2 Folders — 7:00\nDay 4 — 3 Folders — 8:30\nDay 5 — 3 Folders — 7:00\n\nUnfinished folders count against your final score."
+	"caption": "Each workday has a global time limit.\n\nDay 1 — 1 Folder — 3:00\nDay 2 — 2 Folders — 4:00\nDay 3 — 2 Folders — 4:00\nDay 4 — 3 Folders — 5:00\nDay 5 — 3 Folders — 5:00\n\nUnfinished folders count against your final score."
 },
 {
 	"image": "res://Assets/Tutorial/slide_3.png",

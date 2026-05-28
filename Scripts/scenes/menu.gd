@@ -3,6 +3,8 @@ extends Control
 @onready var play_btn = $MenuButtonContainer/PlayButton
 @onready var tutorial_btn = $MenuButtonContainer/TutorialButton
 @onready var exit_btn = $MenuButtonContainer/ExitButton
+
+#SOUND EFFECTS
 @onready var menu_bg_music = $MenuBgMusic
 @onready var button_click_sound = $ButtonClickSound
 
@@ -24,9 +26,10 @@ func _on_play():
 	get_tree().change_scene_to_file("res://Scenes/desk.tscn")
 
 func _on_tutorial():
-	# TODO: add tutorial scene later
 	button_click_sound.play()
-	pass
+	var tutorial = load("res://Scenes/tutorial.tscn").instantiate()
+	add_child(tutorial)
+	tutorial.show()
 
 func _on_exit():
 	button_click_sound.play()
