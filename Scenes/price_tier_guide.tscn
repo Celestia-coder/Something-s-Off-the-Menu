@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ds3rm8h6rb2is"]
 
 [ext_resource type="Texture2D" uid="uid://bdg4agjrxm8xn" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="1_olfvh"]
+[ext_resource type="Script" uid="uid://us8q1lc0j7b3" path="res://Scripts/scenes/price_tier_guide.gd" id="1_xwwlv"]
 [ext_resource type="Texture2D" uid="uid://bvarq4uxypsyk" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="2_xwwlv"]
 [ext_resource type="Texture2D" uid="uid://ditdbvwjo7p17" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Fill01a.png" id="3_7txn0"]
 [ext_resource type="Texture2D" uid="uid://b1ktnmsxyxxob" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Slot01b.png" id="4_mxwpr"]
@@ -46,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xwwlv")
 
 [node name="PriceTierGuidePanel" type="Control" parent="." unique_id=1077896594]
 layout_mode = 1
@@ -530,3 +532,5 @@ offset_top = -8.0
 offset_right = 40.0
 offset_bottom = 8.0
 grow_vertical = 2
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=409423281]

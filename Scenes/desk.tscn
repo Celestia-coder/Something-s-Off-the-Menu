@@ -1,32 +1,45 @@
 [gd_scene format=3 uid="uid://c6sk7dvvic5xn"]
 
-[ext_resource type="Texture2D" uid="uid://c2re75u44egf4" path="res://Assets/Background/5.png" id="1_ii4wa"]
+[ext_resource type="Texture2D" uid="uid://d2oeiq3bulshc" path="res://Assets/Background/Background1.png" id="1_dp2kn"]
+[ext_resource type="Script" uid="uid://b8ywnn8n03jt8" path="res://Scripts/scenes/desk.gd" id="1_svl0u"]
 [ext_resource type="Texture2D" uid="uid://bubuc3ad8hjnw" path="res://Assets/UI assets pack 2/UI books & more.png" id="2_p3ia7"]
 [ext_resource type="Texture2D" uid="uid://6rp4lhx3xicx" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Frame01a.png" id="3_p3ia7"]
 [ext_resource type="Texture2D" uid="uid://b1ktnmsxyxxob" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Slot01b.png" id="5_qwyuq"]
-[ext_resource type="Texture2D" uid="uid://b7apq504xnoq2" path="res://Assets/Icons/Dish Categories.png" id="6_dp2kn"]
-[ext_resource type="Texture2D" uid="uid://bf1wo37fcc08u" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconPause01a.png" id="6_qwyuq"]
+[ext_resource type="Texture2D" uid="uid://dbempvx2vioqk" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconGear01a.png" id="5_svl0u"]
+[ext_resource type="Texture2D" uid="uid://sqgqserfehnx" path="res://Assets/Icons/books.png" id="6_svl0u"]
 [ext_resource type="Texture2D" uid="uid://ce2bvdgr8xd1j" path="res://Assets/Icons/folder.png" id="7_dp2kn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ii4wa"]
 font_size = 33
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_4pfso"]
+font_size = 33
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svl0u"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_svl0u"]
-font_size = 30
-font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5crnc"]
+atlas = ExtResource("6_svl0u")
+region = Rect2(467, 384, 624, 205)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5v8c"]
+atlas = ExtResource("6_svl0u")
+region = Rect2(467, 88, 624, 195)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liiw5"]
+atlas = ExtResource("6_svl0u")
+region = Rect2(467, 690, 624, 199)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pfso"]
-atlas = ExtResource("6_dp2kn")
-region = Rect2(155, 125, 661, 475)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_svl0u"]
 atlas = ExtResource("7_dp2kn")
 region = Rect2(231, 79, 1045, 853)
 
-[sub_resource type="BitMap" id="BitMap_4pfso"]
+[sub_resource type="LabelSettings" id="LabelSettings_svl0u"]
+font_size = 125
+
+[sub_resource type="LabelSettings" id="LabelSettings_5crnc"]
+font_size = 125
 
 [node name="Desk" type="Control" unique_id=1727894601]
 layout_mode = 3
@@ -35,6 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_svl0u")
 
 [node name="BG" type="TextureRect" parent="." unique_id=540106097]
 layout_mode = 1
@@ -43,16 +57,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ii4wa")
+texture = ExtResource("1_dp2kn")
 expand_mode = 5
 metadata/_edit_lock_ = true
 
 [node name="DayFrame" type="NinePatchRect" parent="." unique_id=143475602]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 9.0
-offset_right = 135.55173
-offset_bottom = 58.655167
+offset_left = 35.0
+offset_top = 23.0
+offset_right = 151.55173
+offset_bottom = 72.65517
 scale = Vector2(1.45, 1.45)
 texture = ExtResource("2_p3ia7")
 region_rect = Rect2(656, 16, 48, 64)
@@ -62,19 +76,19 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 metadata/_edit_group_ = true
 
-[node name="Day" type="Label" parent="." unique_id=1371474223]
+[node name="DayLabel" type="Label" parent="." unique_id=1371474223]
 layout_mode = 0
-offset_left = 57.0
-offset_top = 31.0
-offset_right = 150.0
-offset_bottom = 65.0
+offset_left = 73.0
+offset_top = 45.0
+offset_right = 166.0
+offset_bottom = 79.0
 text = "DAY 1"
 label_settings = SubResource("LabelSettings_ii4wa")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_group_ = true
 
-[node name="Timer" type="NinePatchRect" parent="." unique_id=608029535]
+[node name="TimerFrame" type="NinePatchRect" parent="." unique_id=608029535]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -90,203 +104,255 @@ patch_margin_left = 3
 patch_margin_top = 2
 patch_margin_right = 3
 patch_margin_bottom = 3
+metadata/_edit_group_ = true
 
-[node name="CloseButton" type="Button" parent="." unique_id=615307762]
+[node name="TimerLabel" type="Label" parent="." unique_id=335155236]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 18.0
+offset_right = 772.0
+offset_bottom = 52.0
+text = "5:00"
+label_settings = SubResource("LabelSettings_4pfso")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="OptionMenuButton" type="Button" parent="." unique_id=615307762]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -78.0
-offset_top = 17.0
-offset_right = -20.0
-offset_bottom = 77.0
+offset_left = -103.0
+offset_top = 15.0
+offset_right = -24.0
+offset_bottom = 89.0
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_svl0u")
 flat = true
 metadata/_edit_group_ = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CloseButton" unique_id=1748050017]
-layout_mode = 0
-offset_right = 58.0
-offset_bottom = 60.0
+[node name="NinePatchRect" type="NinePatchRect" parent="OptionMenuButton" unique_id=1748050017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("5_qwyuq")
-patch_margin_left = 3
-patch_margin_top = 4
-patch_margin_right = 3
-patch_margin_bottom = 3
+region_rect = Rect2(0, 0, 30, 30)
+patch_margin_left = 16
+patch_margin_top = 17
+patch_margin_right = 16
+patch_margin_bottom = 17
 
-[node name="TextureRect" type="TextureRect" parent="CloseButton" unique_id=1231544156]
+[node name="TextureRect" type="TextureRect" parent="OptionMenuButton" unique_id=1231544156]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -15.25
-offset_top = -20.0
-offset_right = 15.25
-offset_bottom = 20.0
+offset_left = -32.375
+offset_top = -30.375
+offset_right = 32.375
+offset_bottom = 30.375
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_qwyuq")
+texture = ExtResource("5_svl0u")
+stretch_mode = 5
 
-[node name="IngredientsGuide" type="Button" parent="." unique_id=239350362]
+[node name="PeakseasonGuide" type="Button" parent="." unique_id=239350362]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = -175.0
-offset_right = -100.0
-offset_bottom = -118.0
+offset_left = -325.0
+offset_top = -185.0
+offset_right = -83.0
+offset_bottom = -109.0
 grow_horizontal = 0
 grow_vertical = 2
-metadata/_edit_group_ = true
-
-[node name="ColorRect" type="ColorRect" parent="IngredientsGuide" unique_id=230657771]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Seasonal" type="Button" parent="." unique_id=1648939476]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -270.0
-offset_top = -105.0
-offset_right = -99.0
-offset_bottom = -48.0
-grow_horizontal = 0
-grow_vertical = 2
-metadata/_edit_group_ = true
-
-[node name="ColorRect" type="ColorRect" parent="Seasonal" unique_id=1924430130]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Price" type="Button" parent="." unique_id=2067008643]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = -37.0
-offset_right = -100.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
-metadata/_edit_group_ = true
-
-[node name="ColorRect" type="ColorRect" parent="Price" unique_id=1206067270]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PastaButton" type="Button" parent="." unique_id=776598162]
-visible = false
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 440.0
-offset_top = 105.0
-offset_right = 644.0
-offset_bottom = 269.0
-grow_vertical = 2
-rotation = 0.062224694
 flat = true
 metadata/_edit_group_ = true
 
-[node name="Frame" type="NinePatchRect" parent="PastaButton" unique_id=1102152752]
-layout_mode = 0
-offset_right = 63.999992
-offset_bottom = 22.400002
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_p3ia7")
-region_rect = Rect2(16, 384, 16, 32)
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 5
-axis_stretch_vertical = 2
+[node name="ColorRect" type="ColorRect" parent="PeakseasonGuide" unique_id=230657771]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CategoryLabel" type="Label" parent="PastaButton" unique_id=1220584913]
+[node name="TextureRect" type="TextureRect" parent="PeakseasonGuide" unique_id=644493360]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_5crnc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IngredientsGuide" type="Button" parent="." unique_id=949747164]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -110.0
+offset_right = -83.0
+offset_bottom = -34.0
+grow_horizontal = 0
+grow_vertical = 2
+flat = true
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="IngredientsGuide" unique_id=1958921888]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="IngredientsGuide" unique_id=126863127]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_b5v8c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PriceTierGuide" type="Button" parent="." unique_id=342657580]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -35.0
+offset_right = -83.0
+offset_bottom = 41.0
+grow_horizontal = 0
+grow_vertical = 2
+flat = true
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="PriceTierGuide" unique_id=1545660688]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PriceTierGuide" unique_id=451842890]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_liiw5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FolderButton" type="Button" parent="." unique_id=1828834703]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -12.5
-offset_top = -15.5
-offset_right = 58.5
-offset_bottom = 15.5
+offset_left = -254.0
+offset_top = 77.0
+offset_right = 28.0
+offset_bottom = 312.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Pasta"
+flat = true
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="FolderButton" unique_id=909534960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_4pfso")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FadeLayer" type="CanvasLayer" parent="." unique_id=981648803]
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer" unique_id=1476450325]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DayTransitionLabel" type="Label" parent="FadeLayer/FadeRect" unique_id=380444772]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -50.0
+offset_right = 141.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DAY 1"
 label_settings = SubResource("LabelSettings_svl0u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CategoryIcon" type="TextureRect" parent="PastaButton" unique_id=1989986761]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 15.0
-offset_top = -16.0
-offset_right = 60.0
-offset_bottom = 16.0
-grow_vertical = 2
-texture = SubResource("AtlasTexture_4pfso")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="CategoryFrame" type="NinePatchRect" parent="PastaButton" unique_id=563184029]
+[node name="TimeUpLabel" type="Label" parent="FadeLayer/FadeRect" unique_id=1341488789]
 visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -50.0
+offset_right = 141.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_p3ia7")
-region_rect = Rect2(16, 272, 32, 16)
-patch_margin_left = 6
-patch_margin_top = 4
-patch_margin_right = 6
-patch_margin_bottom = 4
+text = "TIME'S UP!"
+label_settings = SubResource("LabelSettings_5crnc")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1264396381]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 376.0
-offset_top = 432.0
-offset_right = -601.0
-offset_bottom = -53.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_svl0u")
-texture_click_mask = SubResource("BitMap_4pfso")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="OfficeBgMusic" type="AudioStreamPlayer" parent="." unique_id=519501209]
+
+[node name="DayBgMusic" type="AudioStreamPlayer" parent="." unique_id=387147599]
+
+[node name="TypewriterSound" type="AudioStreamPlayer" parent="." unique_id=1654931236]
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=1957753841]
+
+[node name="OpenFolderSound" type="AudioStreamPlayer" parent="." unique_id=1853034438]

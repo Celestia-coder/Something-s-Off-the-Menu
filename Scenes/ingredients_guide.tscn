@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://fi80vndonise"]
 
+[ext_resource type="Script" uid="uid://bbnqi5bra062q" path="res://Scripts/scenes/ingredients_guide.gd" id="1_pxfuv"]
 [ext_resource type="Texture2D" uid="uid://bdg4agjrxm8xn" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="1_s06ka"]
 [ext_resource type="Texture2D" uid="uid://bvarq4uxypsyk" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="2_pxfuv"]
 [ext_resource type="Texture2D" uid="uid://ditdbvwjo7p17" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Fill01a.png" id="3_838gm"]
@@ -19,17 +20,39 @@ shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_leg4p"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_pxfuv"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_838gm"]
+load_path = "res://.godot/imported/UI books & more.png-0d7b45574edc58146abd86b208382bbb.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_wsilt"]
 font_size = 30
-font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+font_color = Color(0.047272123, 0.075782575, 0.07008318, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pxfuv"]
+load_path = "res://.godot/imported/UI books & more.png-0d7b45574edc58146abd86b208382bbb.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_leg4p"]
+font_size = 30
+font_color = Color(0.047058824, 0.07450981, 0.07058824, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_838gm"]
 atlas = ExtResource("7_s06ka")
 region = Rect2(155, 125, 661, 475)
 
+[sub_resource type="LabelSettings" id="LabelSettings_pxfuv"]
+font_size = 30
+font_color = Color(0.047272123, 0.075782575, 0.07008318, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dpdet"]
+font_size = 30
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_s06ka"]
 atlas = ExtResource("7_s06ka")
 region = Rect2(1050, 99, 543, 488)
+
+[sub_resource type="LabelSettings" id="LabelSettings_67lyf"]
+font_size = 30
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s06ka"]
 load_path = "res://.godot/imported/Dish Categories.png-26844ba5b70ce42d3914912cd22d5237.ctex"
@@ -38,9 +61,17 @@ load_path = "res://.godot/imported/Dish Categories.png-26844ba5b70ce42d3914912cd
 atlas = SubResource("CompressedTexture2D_s06ka")
 region = Rect2(1842, 120, 493, 498)
 
+[sub_resource type="LabelSettings" id="LabelSettings_wdsko"]
+font_size = 30
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_50j4d"]
 atlas = SubResource("CompressedTexture2D_s06ka")
 region = Rect2(2575, 124, 585, 476)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4l6xn"]
+font_size = 30
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84cdr"]
 atlas = SubResource("CompressedTexture2D_s06ka")
@@ -50,12 +81,32 @@ region = Rect2(3342, 78, 510, 535)
 font_size = 27
 font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_udn7g"]
+font_size = 18
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gyvf5"]
+font_size = 18
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_s06ka"]
-font_size = 17
+font_size = 18
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5m2vk"]
+font_size = 18
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2y664"]
+font_size = 18
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5u45j"]
+font_size = 18
 font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_838gm"]
-font_size = 18
+font_size = 20
 font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
 shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
 
@@ -65,7 +116,7 @@ font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
 shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
 
 [sub_resource type="LabelSettings" id="LabelSettings_84cdr"]
-font_size = 18
+font_size = 20
 font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
 shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
 
@@ -75,7 +126,7 @@ font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
 shadow_color = Color(0.7137255, 0.58431375, 0.41568628, 0.42352942)
 
 [sub_resource type="LabelSettings" id="LabelSettings_c6p1w"]
-font_size = 15
+font_size = 17
 font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
 shadow_color = Color(0.7156569, 0.58516246, 0.41478825, 0.42352942)
 
@@ -86,8 +137,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pxfuv")
 
-[node name="PriceTierGuidePanel" type="Control" parent="." unique_id=2139247108]
+[node name="IngredientsGuidePanel" type="Control" parent="." unique_id=2139247108]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -101,7 +153,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PriceTierGuideMainBG" type="TextureRect" parent="PriceTierGuidePanel" unique_id=1227692697]
+[node name="IngredientsGuideMainBG" type="TextureRect" parent="IngredientsGuidePanel" unique_id=1227692697]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -117,7 +169,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_s06ka")
 
-[node name="PriceTierGuidePaper" type="NinePatchRect" parent="PriceTierGuidePanel" unique_id=119756042]
+[node name="IngredientsGuidePaper" type="NinePatchRect" parent="IngredientsGuidePanel" unique_id=119756042]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -137,7 +189,7 @@ patch_margin_top = 3
 patch_margin_right = 6
 patch_margin_bottom = 7
 
-[node name="TopSection" type="Control" parent="PriceTierGuidePanel" unique_id=1747914544]
+[node name="TopSection" type="Control" parent="IngredientsGuidePanel" unique_id=1747914544]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -151,7 +203,7 @@ offset_bottom = -150.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="PriceTierGuidePanel/TopSection" unique_id=1876975453]
+[node name="ColorRect" type="ColorRect" parent="IngredientsGuidePanel/TopSection" unique_id=1876975453]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -160,14 +212,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ReferenceTitle" type="Label" parent="PriceTierGuidePanel/TopSection" unique_id=325992217]
+[node name="GuideTitle" type="Label" parent="IngredientsGuidePanel/TopSection" unique_id=325992217]
 layout_mode = 1
 offset_right = 473.0
 offset_bottom = 46.0
 text = "INGREDIENTS REFERENCE GUIDE"
 label_settings = SubResource("LabelSettings_rmflm")
 
-[node name="ReferenceDescription" type="Label" parent="PriceTierGuidePanel/TopSection" unique_id=1713276799]
+[node name="GuideDescription" type="Label" parent="IngredientsGuidePanel/TopSection" unique_id=1713276799]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -179,7 +231,7 @@ grow_vertical = 2
 text = "Use this guide to check the ingredients and allergens of each dish."
 label_settings = SubResource("LabelSettings_n611m")
 
-[node name="TopDivider" type="TextureRect" parent="PriceTierGuidePanel/TopSection" unique_id=523143926]
+[node name="TopDivider" type="TextureRect" parent="IngredientsGuidePanel/TopSection" unique_id=523143926]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -193,7 +245,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_838gm")
 
-[node name="CloseButton" type="Button" parent="PriceTierGuidePanel/TopSection" unique_id=625893743]
+[node name="CloseButton" type="Button" parent="IngredientsGuidePanel/TopSection" unique_id=625893743]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -205,7 +257,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_leg4p")
 flat = true
 metadata/_edit_group_ = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PriceTierGuidePanel/TopSection/CloseButton" unique_id=682573211]
+[node name="NinePatchRect" type="NinePatchRect" parent="IngredientsGuidePanel/TopSection/CloseButton" unique_id=682573211]
 layout_mode = 0
 offset_right = 50.0
 offset_bottom = 50.0
@@ -215,7 +267,7 @@ patch_margin_top = 4
 patch_margin_right = 3
 patch_margin_bottom = 3
 
-[node name="TextureRect" type="TextureRect" parent="PriceTierGuidePanel/TopSection/CloseButton" unique_id=229249686]
+[node name="TextureRect" type="TextureRect" parent="IngredientsGuidePanel/TopSection/CloseButton" unique_id=229249686]
 layout_mode = 1
 offset_left = 5.0
 offset_top = 5.0
@@ -223,7 +275,7 @@ offset_right = 45.0
 offset_bottom = 45.0
 texture = ExtResource("5_84cdr")
 
-[node name="MiddleSection" type="Control" parent="PriceTierGuidePanel" unique_id=784338019]
+[node name="MiddleSection" type="Control" parent="IngredientsGuidePanel" unique_id=784338019]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -237,7 +289,7 @@ offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="PriceTierGuidePanel/MiddleSection" unique_id=900855486]
+[node name="ColorRect" type="ColorRect" parent="IngredientsGuidePanel/MiddleSection" unique_id=900855486]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -246,16 +298,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CategorySection" type="Control" parent="PriceTierGuidePanel/MiddleSection" unique_id=2125804213]
+[node name="CategorySection" type="Control" parent="IngredientsGuidePanel/MiddleSection" unique_id=2125804213]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -248.0
+offset_bottom = -256.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect2" type="ColorRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection" unique_id=101240752]
+[node name="ColorRect2" type="ColorRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection" unique_id=101240752]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -265,7 +317,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.6803385, 0.9580608, 0.92995787, 1)
 
-[node name="PastaButton" type="Button" parent="PriceTierGuidePanel/MiddleSection/CategorySection" unique_id=423283072]
+[node name="PastaButton" type="Button" parent="IngredientsGuidePanel/MiddleSection/CategorySection" unique_id=423283072]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -277,20 +329,21 @@ grow_vertical = 2
 flat = true
 metadata/_edit_group_ = true
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/PastaButton" unique_id=2032973720]
+[node name="DefaultFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/PastaButton" unique_id=1043399035]
 layout_mode = 0
 offset_right = 63.999992
 offset_bottom = 22.400002
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("7_hj0vx")
+texture = SubResource("CompressedTexture2D_838gm")
 region_rect = Rect2(16, 384, 16, 32)
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="CategoryLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/CategorySection/PastaButton" unique_id=1472375834]
+[node name="DefaultCategoryLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/CategorySection/PastaButton" unique_id=312427011]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -304,11 +357,45 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Pasta"
-label_settings = SubResource("LabelSettings_pxfuv")
+label_settings = SubResource("LabelSettings_wsilt")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="CategoryIcon" type="TextureRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/PastaButton" unique_id=212381754]
+[node name="ActiveFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/PastaButton" unique_id=695526420]
+layout_mode = 0
+offset_right = 63.999992
+offset_bottom = 22.400002
+scale = Vector2(2.5, 2.5)
+texture = SubResource("CompressedTexture2D_pxfuv")
+region_rect = Rect2(352, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="ActiveCategoryLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/CategorySection/PastaButton" unique_id=462482672]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -15.5
+offset_right = 58.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pasta"
+label_settings = SubResource("LabelSettings_leg4p")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="CategoryIcon" type="TextureRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/PastaButton" unique_id=1794493904]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 4
@@ -323,22 +410,7 @@ texture = SubResource("AtlasTexture_838gm")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="CategoryFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/PastaButton" unique_id=1504686328]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_hj0vx")
-region_rect = Rect2(16, 272, 32, 16)
-patch_margin_left = 6
-patch_margin_top = 4
-patch_margin_right = 6
-patch_margin_bottom = 4
-
-[node name="DessertsButton" type="Button" parent="PriceTierGuidePanel/MiddleSection/CategorySection" unique_id=489817987]
+[node name="DessertsButton" type="Button" parent="IngredientsGuidePanel/MiddleSection/CategorySection" unique_id=489817987]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -351,7 +423,7 @@ grow_vertical = 2
 flat = true
 metadata/_edit_group_ = true
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/DessertsButton" unique_id=1718325360]
+[node name="DefaultFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/DessertsButton" unique_id=1718325360]
 layout_mode = 0
 offset_right = 73.600006
 offset_bottom = 22.400002
@@ -363,8 +435,9 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="CategoryLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/CategorySection/DessertsButton" unique_id=1582842430]
+[node name="DefaultCategoryLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/CategorySection/DessertsButton" unique_id=1582842430]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -381,8 +454,42 @@ text = "Desserts"
 label_settings = SubResource("LabelSettings_pxfuv")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="CategoryIcon" type="TextureRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/DessertsButton" unique_id=2126322505]
+[node name="ActiveFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/DessertsButton" unique_id=865441774]
+layout_mode = 0
+offset_right = 73.600006
+offset_bottom = 22.400002
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_hj0vx")
+region_rect = Rect2(352, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="ActiveCategoryLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/CategorySection/DessertsButton" unique_id=1031463177]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -15.5
+offset_right = 79.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Desserts"
+label_settings = SubResource("LabelSettings_dpdet")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="CategoryIcon" type="TextureRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/DessertsButton" unique_id=2126322505]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 4
@@ -397,22 +504,7 @@ texture = SubResource("AtlasTexture_s06ka")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="CategoryFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/DessertsButton" unique_id=1918055384]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_hj0vx")
-region_rect = Rect2(16, 272, 32, 16)
-patch_margin_left = 6
-patch_margin_top = 4
-patch_margin_right = 6
-patch_margin_bottom = 4
-
-[node name="SeafoodButton" type="Button" parent="PriceTierGuidePanel/MiddleSection/CategorySection" unique_id=1214174753]
+[node name="SeafoodButton" type="Button" parent="IngredientsGuidePanel/MiddleSection/CategorySection" unique_id=1214174753]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -425,7 +517,7 @@ grow_vertical = 2
 flat = true
 metadata/_edit_group_ = true
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/SeafoodButton" unique_id=1319163124]
+[node name="DefaultFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/SeafoodButton" unique_id=1319163124]
 layout_mode = 0
 offset_right = 73.59999
 offset_bottom = 22.400002
@@ -437,8 +529,9 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="CategoryLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/CategorySection/SeafoodButton" unique_id=830810636]
+[node name="DefaultCategoryLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/CategorySection/SeafoodButton" unique_id=830810636]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -454,8 +547,41 @@ grow_vertical = 2
 text = "Seafood"
 label_settings = SubResource("LabelSettings_pxfuv")
 vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="CategoryIcon" type="TextureRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/SeafoodButton" unique_id=1423405290]
+[node name="ActiveFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/SeafoodButton" unique_id=1847921576]
+layout_mode = 0
+offset_right = 73.59999
+offset_bottom = 22.400002
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_hj0vx")
+region_rect = Rect2(352, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="ActiveCategoryLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/CategorySection/SeafoodButton" unique_id=1053819793]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -15.5
+offset_right = 83.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Seafood"
+label_settings = SubResource("LabelSettings_67lyf")
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="CategoryIcon" type="TextureRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/SeafoodButton" unique_id=1423405290]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 4
@@ -470,22 +596,7 @@ texture = SubResource("AtlasTexture_pxfuv")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="CategoryFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/SeafoodButton" unique_id=1939684054]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_hj0vx")
-region_rect = Rect2(16, 272, 32, 16)
-patch_margin_left = 6
-patch_margin_top = 4
-patch_margin_right = 6
-patch_margin_bottom = 4
-
-[node name="SteaksButton" type="Button" parent="PriceTierGuidePanel/MiddleSection/CategorySection" unique_id=911286052]
+[node name="SteaksButton" type="Button" parent="IngredientsGuidePanel/MiddleSection/CategorySection" unique_id=911286052]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -498,7 +609,7 @@ grow_vertical = 2
 flat = true
 metadata/_edit_group_ = true
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/SteaksButton" unique_id=2081993608]
+[node name="DefaultFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/SteaksButton" unique_id=2081993608]
 layout_mode = 0
 offset_right = 67.19998
 offset_bottom = 22.400002
@@ -510,23 +621,9 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="CategoryIcon" type="TextureRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/SteaksButton" unique_id=98506123]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 15.0
-offset_top = -16.0
-offset_right = 52.0
-offset_bottom = 16.0
-grow_vertical = 2
-texture = SubResource("AtlasTexture_50j4d")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="CategoryLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/CategorySection/SteaksButton" unique_id=446945656]
+[node name="DefaultCategoryLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/CategorySection/SteaksButton" unique_id=446945656]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -542,23 +639,56 @@ grow_vertical = 2
 text = "Steaks"
 label_settings = SubResource("LabelSettings_pxfuv")
 vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="CategoryFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/SteaksButton" unique_id=1593823728]
-visible = false
+[node name="ActiveFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/SteaksButton" unique_id=1133225349]
+layout_mode = 0
+offset_right = 67.19998
+offset_bottom = 22.400002
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_hj0vx")
+region_rect = Rect2(352, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="ActiveCategoryLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/CategorySection/SteaksButton" unique_id=348085098]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 68.0
+offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_hj0vx")
-region_rect = Rect2(16, 272, 32, 16)
-patch_margin_left = 6
-patch_margin_top = 4
-patch_margin_right = 6
-patch_margin_bottom = 4
+text = "Steaks"
+label_settings = SubResource("LabelSettings_wdsko")
+vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="NoodlesButton" type="Button" parent="PriceTierGuidePanel/MiddleSection/CategorySection" unique_id=2000637090]
+[node name="CategoryIcon" type="TextureRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/SteaksButton" unique_id=98506123]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -16.0
+offset_right = 52.0
+offset_bottom = 16.0
+grow_vertical = 2
+texture = SubResource("AtlasTexture_50j4d")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="NoodlesButton" type="Button" parent="IngredientsGuidePanel/MiddleSection/CategorySection" unique_id=2000637090]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -571,7 +701,7 @@ grow_vertical = 2
 flat = true
 metadata/_edit_group_ = true
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/NoodlesButton" unique_id=800077391]
+[node name="DefaultFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/NoodlesButton" unique_id=800077391]
 layout_mode = 0
 offset_right = 73.599976
 offset_bottom = 22.400002
@@ -583,23 +713,9 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="CategoryIcon" type="TextureRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/NoodlesButton" unique_id=2051253214]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 14.0
-offset_top = -16.0
-offset_right = 51.0
-offset_bottom = 16.0
-grow_vertical = 2
-texture = SubResource("AtlasTexture_84cdr")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="CategoryLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/CategorySection/NoodlesButton" unique_id=1803538876]
+[node name="DefaultCategoryLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/CategorySection/NoodlesButton" unique_id=1698605566]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -615,34 +731,67 @@ grow_vertical = 2
 text = "Noodles"
 label_settings = SubResource("LabelSettings_pxfuv")
 vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="CategoryFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/CategorySection/NoodlesButton" unique_id=598769910]
-visible = false
+[node name="ActiveFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/NoodlesButton" unique_id=1847339678]
+layout_mode = 0
+offset_right = 73.599976
+offset_bottom = 22.400002
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_hj0vx")
+region_rect = Rect2(352, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="ActiveCategoryLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/CategorySection/NoodlesButton" unique_id=1803538876]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -15.5
+offset_right = 69.0
+offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_hj0vx")
-region_rect = Rect2(16, 272, 32, 16)
-patch_margin_left = 6
-patch_margin_top = 4
-patch_margin_right = 6
-patch_margin_bottom = 4
+text = "Noodles"
+label_settings = SubResource("LabelSettings_4l6xn")
+vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="DishInfoSection" type="Control" parent="PriceTierGuidePanel/MiddleSection" unique_id=840106720]
+[node name="CategoryIcon" type="TextureRect" parent="IngredientsGuidePanel/MiddleSection/CategorySection/NoodlesButton" unique_id=903076555]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 14.0
+offset_top = -16.0
+offset_right = 51.0
+offset_bottom = 16.0
+grow_vertical = 2
+texture = SubResource("AtlasTexture_84cdr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="DishInfoSection" type="Control" parent="IngredientsGuidePanel/MiddleSection" unique_id=840106720]
 anchors_preset = 0
 offset_top = 64.0
 offset_right = 912.0
 offset_bottom = 312.0
 
-[node name="DishList" type="Control" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection" unique_id=339379579]
+[node name="DishList" type="Control" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection" unique_id=339379579]
 anchors_preset = 0
 offset_right = 352.0
 offset_bottom = 280.0
 
-[node name="ColorRect" type="ColorRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1354212867]
+[node name="ColorRect" type="ColorRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1354212867]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -652,7 +801,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.7882353, 0.8509804, 1)
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1087593048]
+[node name="Frame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1087593048]
 layout_mode = 0
 offset_right = 140.79999
 offset_bottom = 111.999985
@@ -665,22 +814,7 @@ patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
 
-[node name="DishListFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=577071663]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_hj0vx")
-region_rect = Rect2(16, 272, 32, 16)
-patch_margin_left = 6
-patch_margin_top = 4
-patch_margin_right = 6
-patch_margin_bottom = 4
-
-[node name="CategoryLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1571146923]
+[node name="CategoryLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1571146923]
 layout_mode = 1
 offset_left = 16.0
 offset_top = 16.0
@@ -690,7 +824,7 @@ text = "Desserts"
 label_settings = SubResource("LabelSettings_evkw7")
 vertical_alignment = 1
 
-[node name="Dish1" type="Button" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1343772913]
+[node name="Dish1" type="Button" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1343772913]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -706,7 +840,7 @@ grow_vertical = 2
 flat = true
 metadata/_edit_group_ = true
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish1" unique_id=176566677]
+[node name="DefaultFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish1" unique_id=176566677]
 layout_mode = 0
 offset_right = 127.99999
 offset_bottom = 19.199997
@@ -718,39 +852,53 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="DishLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish1" unique_id=307569334]
+[node name="DefaultDishLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish1" unique_id=307569334]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 12.0
-offset_top = -9.0
-offset_right = 205.0
-offset_bottom = 9.0
+offset_top = -9.5
+offset_right = 304.0
+offset_bottom = 9.5
 grow_vertical = 2
 text = "Peach Cream Pudding"
-label_settings = SubResource("LabelSettings_s06ka")
+label_settings = SubResource("LabelSettings_udn7g")
 vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="DishFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish1" unique_id=639815258]
-visible = false
+[node name="ActiveFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish1" unique_id=1187277978]
+layout_mode = 0
+offset_right = 127.99999
+offset_bottom = 19.199997
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_hj0vx")
+region_rect = Rect2(352, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="ActiveDishLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish1" unique_id=108096690]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -24.0
-offset_right = 320.0
-offset_bottom = 24.0
+offset_left = 12.0
+offset_top = -9.5
+offset_right = 304.0
+offset_bottom = 9.5
 grow_vertical = 2
-texture = ExtResource("7_hj0vx")
-region_rect = Rect2(16, 272, 32, 16)
-patch_margin_left = 6
-patch_margin_top = 4
-patch_margin_right = 6
-patch_margin_bottom = 4
+text = "Peach Cream Pudding"
+label_settings = SubResource("LabelSettings_gyvf5")
+vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="Dish2" type="Button" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1116931278]
+[node name="Dish2" type="Button" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1116931278]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -766,7 +914,7 @@ grow_vertical = 2
 flat = true
 metadata/_edit_group_ = true
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish2" unique_id=1256271491]
+[node name="DefaultFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish2" unique_id=1256271491]
 layout_mode = 0
 offset_right = 127.99999
 offset_bottom = 19.199997
@@ -778,39 +926,53 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="DishLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish2" unique_id=535697077]
+[node name="DefaultDishLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish2" unique_id=535697077]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 12.0
-offset_top = -9.0
-offset_right = 205.0
-offset_bottom = 9.0
+offset_top = -9.5
+offset_right = 304.0
+offset_bottom = 9.5
 grow_vertical = 2
 text = "Peach Cream Pudding"
 label_settings = SubResource("LabelSettings_s06ka")
 vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="DishFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish2" unique_id=282028090]
-visible = false
+[node name="ActiveFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish2" unique_id=2064043002]
+layout_mode = 0
+offset_right = 127.99999
+offset_bottom = 19.199997
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_hj0vx")
+region_rect = Rect2(352, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="ActiveDishLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish2" unique_id=38193040]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -24.0
-offset_right = 320.0
-offset_bottom = 24.0
+offset_left = 12.0
+offset_top = -9.5
+offset_right = 304.0
+offset_bottom = 9.5
 grow_vertical = 2
-texture = ExtResource("7_hj0vx")
-region_rect = Rect2(16, 272, 32, 16)
-patch_margin_left = 6
-patch_margin_top = 4
-patch_margin_right = 6
-patch_margin_bottom = 4
+text = "Peach Cream Pudding"
+label_settings = SubResource("LabelSettings_5m2vk")
+vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="Dish3" type="Button" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1246246168]
+[node name="Dish3" type="Button" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=1246246168]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -826,7 +988,7 @@ grow_vertical = 2
 flat = true
 metadata/_edit_group_ = true
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish3" unique_id=1675414819]
+[node name="DefaultFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish3" unique_id=1675414819]
 layout_mode = 0
 offset_right = 127.99999
 offset_bottom = 19.199997
@@ -838,39 +1000,53 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="DishLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish3" unique_id=2127037421]
+[node name="DefaultDishLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish3" unique_id=2127037421]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 12.0
-offset_top = -9.0
-offset_right = 205.0
-offset_bottom = 9.0
+offset_top = -9.5
+offset_right = 304.0
+offset_bottom = 9.5
 grow_vertical = 2
 text = "Peach Cream Pudding"
 label_settings = SubResource("LabelSettings_s06ka")
 vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="DishFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish3" unique_id=1532893988]
-visible = false
+[node name="ActiveFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish3" unique_id=939203581]
+layout_mode = 0
+offset_right = 127.99999
+offset_bottom = 19.199997
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_hj0vx")
+region_rect = Rect2(352, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="ActiveDishLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish3" unique_id=455684959]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -24.0
-offset_right = 320.0
-offset_bottom = 24.0
+offset_left = 12.0
+offset_top = -9.5
+offset_right = 304.0
+offset_bottom = 9.5
 grow_vertical = 2
-texture = ExtResource("7_hj0vx")
-region_rect = Rect2(16, 272, 32, 16)
-patch_margin_left = 6
-patch_margin_top = 4
-patch_margin_right = 6
-patch_margin_bottom = 4
+text = "Peach Cream Pudding"
+label_settings = SubResource("LabelSettings_2y664")
+vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="Dish4" type="Button" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=304535089]
+[node name="Dish4" type="Button" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList" unique_id=304535089]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -886,7 +1062,7 @@ grow_vertical = 2
 flat = true
 metadata/_edit_group_ = true
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish4" unique_id=1540852707]
+[node name="DefaultFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish4" unique_id=1540852707]
 layout_mode = 0
 offset_right = 127.99999
 offset_bottom = 19.199997
@@ -898,45 +1074,59 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="DishLabel" type="Label" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish4" unique_id=2037768383]
+[node name="DefaultDishLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish4" unique_id=2037768383]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -9.5
+offset_right = 304.0
+offset_bottom = 9.5
+grow_vertical = 2
+text = "Peach Cream Pudding"
+label_settings = SubResource("LabelSettings_s06ka")
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="ActiveFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish4" unique_id=95075396]
+layout_mode = 0
+offset_right = 127.99999
+offset_bottom = 19.199997
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_hj0vx")
+region_rect = Rect2(352, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="ActiveDishLabel" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishList/Dish4" unique_id=1799459429]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 12.0
 offset_top = -9.0
-offset_right = 205.0
+offset_right = 304.0
 offset_bottom = 9.0
 grow_vertical = 2
 text = "Peach Cream Pudding"
-label_settings = SubResource("LabelSettings_s06ka")
+label_settings = SubResource("LabelSettings_5u45j")
 vertical_alignment = 1
+metadata/_edit_group_ = true
 
-[node name="DishFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishList/Dish4" unique_id=17414404]
-visible = false
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -24.0
-offset_right = 320.0
-offset_bottom = 24.0
-grow_vertical = 2
-texture = ExtResource("7_hj0vx")
-region_rect = Rect2(16, 272, 32, 16)
-patch_margin_left = 6
-patch_margin_top = 4
-patch_margin_right = 6
-patch_margin_bottom = 4
-
-[node name="DishInfoSection" type="Control" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection" unique_id=562421696]
+[node name="DishInfoSection" type="Control" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection" unique_id=562421696]
 anchors_preset = 0
 offset_left = 368.0
 offset_right = 912.0
 offset_bottom = 280.0
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=989382084]
+[node name="Frame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=989382084]
 layout_mode = 0
 offset_right = 217.59998
 offset_bottom = 111.999985
@@ -949,7 +1139,7 @@ patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
 
-[node name="DishInfoFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=1055024090]
+[node name="DishInfoFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=1055024090]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -964,17 +1154,17 @@ patch_margin_top = 4
 patch_margin_right = 6
 patch_margin_bottom = 4
 
-[node name="DishTitle" type="Label" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=52601082]
+[node name="DishTitle" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=52601082]
 layout_mode = 1
 offset_left = 21.0
-offset_top = 13.0
+offset_top = 15.0
 offset_right = 281.0
-offset_bottom = 41.0
+offset_bottom = 43.0
 text = "Peach Cream Pudding"
 label_settings = SubResource("LabelSettings_evkw7")
 vertical_alignment = 1
 
-[node name="TopDivider" type="TextureRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=1534984510]
+[node name="TopDivider" type="TextureRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=1534984510]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -986,17 +1176,17 @@ offset_bottom = 47.0
 grow_horizontal = 2
 texture = ExtResource("3_838gm")
 
-[node name="DishDescription" type="Label" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=1423869283]
+[node name="DishDescription" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=1423869283]
 layout_mode = 1
 offset_left = 21.0
-offset_top = 52.0
-offset_right = 360.0
-offset_bottom = 72.0
+offset_top = 56.0
+offset_right = 528.0
+offset_bottom = 91.0
 text = "Peach Cream Pudding is a delicious dessert... Peach Cream Pudding is a delicious dessert..."
 label_settings = SubResource("LabelSettings_n611m")
 autowrap_mode = 3
 
-[node name="DishIngredients" type="Control" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=1407921730]
+[node name="DishIngredients" type="Control" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=1407921730]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1007,7 +1197,7 @@ offset_right = 264.0
 offset_bottom = 124.0
 grow_vertical = 2
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishIngredients" unique_id=1688693932]
+[node name="Frame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishIngredients" unique_id=1688693932]
 layout_mode = 0
 offset_right = 99.20001
 offset_bottom = 64.0
@@ -1020,7 +1210,7 @@ patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
 
-[node name="IngredientsTitle" type="Label" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishIngredients" unique_id=1632359643]
+[node name="IngredientsTitle" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishIngredients" unique_id=1632359643]
 layout_mode = 1
 offset_top = 12.0
 offset_right = 248.0
@@ -1031,11 +1221,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="IngredientsList" type="Label" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishIngredients" unique_id=1027624305]
+[node name="IngredientsList" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishIngredients" unique_id=1027624305]
 layout_mode = 1
-offset_top = 44.0
+offset_top = 49.0
 offset_right = 248.0
-offset_bottom = 144.0
+offset_bottom = 149.0
 text = "Peach
 Egg
 Cheese
@@ -1044,7 +1234,7 @@ label_settings = SubResource("LabelSettings_50j4d")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="DishIngredientsFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishIngredients" unique_id=322409192]
+[node name="DishIngredientsFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishIngredients" unique_id=322409192]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -1059,7 +1249,7 @@ patch_margin_top = 4
 patch_margin_right = 6
 patch_margin_bottom = 4
 
-[node name="DishAllergens" type="Control" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=540345365]
+[node name="DishAllergens" type="Control" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection" unique_id=540345365]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1070,7 +1260,7 @@ offset_right = 528.0
 offset_bottom = 124.0
 grow_vertical = 2
 
-[node name="Frame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishAllergens" unique_id=1409690829]
+[node name="Frame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishAllergens" unique_id=1409690829]
 layout_mode = 0
 offset_right = 99.20001
 offset_bottom = 64.0
@@ -1083,7 +1273,7 @@ patch_margin_right = 4
 patch_margin_bottom = 5
 axis_stretch_vertical = 2
 
-[node name="AllergensTitle" type="Label" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishAllergens" unique_id=1724959100]
+[node name="AllergensTitle" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishAllergens" unique_id=1724959100]
 layout_mode = 1
 offset_top = 11.0
 offset_right = 248.0
@@ -1094,11 +1284,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="AllergensList" type="Label" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishAllergens" unique_id=2083312557]
+[node name="AllergensList" type="Label" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishAllergens" unique_id=2083312557]
 layout_mode = 1
-offset_top = 43.0
+offset_top = 46.0
 offset_right = 248.0
-offset_bottom = 143.0
+offset_bottom = 146.0
 text = "Eggs
 Dairy
 Soy"
@@ -1106,7 +1296,7 @@ label_settings = SubResource("LabelSettings_hj0vx")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="DishAllergensFrame" type="NinePatchRect" parent="PriceTierGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishAllergens" unique_id=2022128248]
+[node name="DishAllergensFrame" type="NinePatchRect" parent="IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishAllergens" unique_id=2022128248]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -1121,7 +1311,7 @@ patch_margin_top = 4
 patch_margin_right = 6
 patch_margin_bottom = 4
 
-[node name="BottomSection" type="Control" parent="PriceTierGuidePanel" unique_id=262393941]
+[node name="BottomSection" type="Control" parent="IngredientsGuidePanel" unique_id=262393941]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1135,7 +1325,7 @@ offset_bottom = 248.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="PriceTierGuidePanel/BottomSection" unique_id=2146635723]
+[node name="ColorRect" type="ColorRect" parent="IngredientsGuidePanel/BottomSection" unique_id=2146635723]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -1144,7 +1334,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FooterNotes" type="Label" parent="PriceTierGuidePanel/BottomSection" unique_id=1567458111]
+[node name="FooterNotes" type="Label" parent="IngredientsGuidePanel/BottomSection" unique_id=1567458111]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -1162,3 +1352,5 @@ text = "ⓘ Incorrect allergen information may result in restaurant closure."
 label_settings = SubResource("LabelSettings_c6p1w")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=2025755176]

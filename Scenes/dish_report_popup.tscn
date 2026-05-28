@@ -1,19 +1,15 @@
 [gd_scene format=3 uid="uid://bvneg8a4ky64p"]
 
-[ext_resource type="Script" uid="uid://cysvhdqken34s" path="res://Scripts/dish_report_popup.gd" id="1_3o0lp"]
+[ext_resource type="Script" uid="uid://cysvhdqken34s" path="res://Scripts/scenes/dish_report_popup.gd" id="1_3o0lp"]
 [ext_resource type="Texture2D" uid="uid://dv4fc5g7gp78v" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_BookPageLeft01a.png" id="1_na6yf"]
 [ext_resource type="Texture2D" uid="uid://cebb1p0vxyken" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01a.png" id="2_3o0lp"]
 [ext_resource type="Texture2D" uid="uid://ditdbvwjo7p17" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Fill01a.png" id="3_3o0lp"]
-[ext_resource type="Texture2D" uid="uid://b2y2nbwmii7iq" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Marker01a.png" id="3_fx71l"]
 [ext_resource type="Texture2D" uid="uid://cuv5jjau6u6vb" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="4_daxyc"]
 [ext_resource type="Texture2D" uid="uid://bubuc3ad8hjnw" path="res://Assets/UI assets pack 2/UI books & more.png" id="5_daxyc"]
-[ext_resource type="Texture2D" uid="uid://dba8j1ryqy77x" path="res://Assets/Dish Images/peach.png" id="6_emntv"]
 [ext_resource type="Texture2D" uid="uid://b1ktnmsxyxxob" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Slot01b.png" id="6_xxwbq"]
 [ext_resource type="Texture2D" uid="uid://bvarq4uxypsyk" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="7_xxwbq"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fx71l"]
-atlas = ExtResource("5_daxyc")
-region = Rect2(352, 384, 16, 32)
+[ext_resource type="Texture2D" uid="uid://ds5b1wuib1vp8" path="res://Assets/dishes/strawberry_parfait.png" id="8_xxwbq"]
+[ext_resource type="Texture2D" uid="uid://psjf81qaprku" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconArrow01a.png" id="10_fx71l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kclcs"]
 font_size = 35
@@ -34,12 +30,12 @@ shadow_size = 2
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xxwbq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f8eui"]
-font_size = 21
+font_size = 25
 font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qhl6b"]
 line_spacing = 10.0
-font_size = 18
+font_size = 22
 font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_daxyc"]
@@ -49,25 +45,20 @@ load_path = "res://.godot/imported/UI_TravelBook_FrameSelect01b.png-6d59f12e4532
 
 [sub_resource type="LabelSettings" id="LabelSettings_emntv"]
 font_size = 27
-font_color = Color(0.003333596, 0.38581476, 0.05075202, 1)
 shadow_size = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fx71l"]
+load_path = "res://.godot/imported/UI books & more.png-0d7b45574edc58146abd86b208382bbb.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_daxyc"]
 font_size = 27
-font_color = Color(0.70980394, 0, 0.08235294, 1)
 shadow_size = 2
 
 [node name="DishReportPopup" type="Control" unique_id=1541105910]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -410.5
-offset_top = -273.5
-offset_right = 410.5
-offset_bottom = 273.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3o0lp")
@@ -82,40 +73,13 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="UiTravelBookMarker01a" type="TextureRect" parent="DishReportPanel" unique_id=547728202]
-layout_mode = 0
-offset_left = -384.0
-offset_top = -320.0
-offset_right = -364.0
-offset_bottom = -288.0
-scale = Vector2(3.3, 3.357143)
-texture = SubResource("AtlasTexture_fx71l")
-
-[node name="UiTravelBookMarker01a2" type="TextureRect" parent="DishReportPanel" unique_id=780800348]
-layout_mode = 0
-offset_left = -312.0
-offset_top = -320.0
-offset_right = -292.0
-offset_bottom = -288.0
-scale = Vector2(3.3, 3.357143)
-texture = SubResource("AtlasTexture_fx71l")
-
-[node name="UiTravelBookMarker01a3" type="TextureRect" parent="DishReportPanel" unique_id=2017861929]
-layout_mode = 0
-offset_left = -240.0
-offset_top = -320.0
-offset_right = -220.0
-offset_bottom = -288.0
-scale = Vector2(3.3, 3.357143)
-texture = SubResource("AtlasTexture_fx71l")
-
 [node name="PanelBG" type="TextureRect" parent="DishReportPanel" unique_id=570723092]
 texture_filter = 1
 layout_mode = 1
-offset_left = -428.0
-offset_top = 257.50003
-offset_right = 119.20001
-offset_bottom = 1078.9
+offset_left = -427.0
+offset_top = 258.50003
+offset_right = 120.20001
+offset_bottom = 1079.9
 rotation = -1.5707964
 pivot_offset = Vector2(17.645, 0)
 mouse_filter = 2
@@ -144,12 +108,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -192.5
+offset_left = -210.0
 offset_top = 6.0
-offset_right = 192.5
+offset_right = 318.0
 offset_bottom = 42.0
 grow_horizontal = 2
-text = "PEACH CREAMY PUDDING"
+text = "Strawberry Parfait"
 label_settings = SubResource("LabelSettings_kclcs")
 horizontal_alignment = 1
 
@@ -160,79 +124,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -99.0
+offset_left = -211.0
 offset_top = 7.0
-offset_right = 99.0
+offset_right = 317.0
 offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Roswell Restaurant"
-label_settings = SubResource("LabelSettings_fx71l")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RestaurantNameLabel2" type="Label" parent="DishReportPanel/TopSection/TitleContainer" unique_id=991090998]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -350.0
-offset_top = -87.5
-offset_right = -318.0
-offset_bottom = -65.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "1"
-label_settings = SubResource("LabelSettings_fx71l")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="UiTravelBookMarker01a2" type="Sprite2D" parent="DishReportPanel/TopSection/TitleContainer" unique_id=1741905822]
-visible = false
-position = Vector2(179.99998, -38.000004)
-scale = Vector2(3.3, 3.357143)
-texture = ExtResource("3_fx71l")
-
-[node name="RestaurantNameLabel4" type="Label" parent="DishReportPanel/TopSection/TitleContainer" unique_id=62075042]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -207.0
-offset_top = -87.5
-offset_right = -175.0
-offset_bottom = -65.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "3"
-label_settings = SubResource("LabelSettings_fx71l")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="UiTravelBookMarker01a3" type="Sprite2D" parent="DishReportPanel/TopSection/TitleContainer" unique_id=1680694190]
-visible = false
-position = Vector2(108, -38.000004)
-scale = Vector2(3.3, 3.357143)
-texture = ExtResource("3_fx71l")
-
-[node name="RestaurantNameLabel3" type="Label" parent="DishReportPanel/TopSection/TitleContainer" unique_id=1788989959]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -278.0
-offset_top = -87.5
-offset_right = -246.0
-offset_bottom = -65.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "2"
 label_settings = SubResource("LabelSettings_fx71l")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -252,9 +150,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -22.5
-offset_right = 148.0
-offset_bottom = 16.0
+offset_left = 10.0
+offset_top = -36.5
+offset_right = 158.0
+offset_bottom = 2.0
 grow_vertical = 2
 texture = ExtResource("2_3o0lp")
 metadata/_edit_group_ = true
@@ -267,15 +166,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -360.0
-offset_top = -15.25
-offset_right = -232.0
-offset_bottom = 8.75
+offset_left = -350.0
+offset_top = -27.25
+offset_right = -222.0
+offset_bottom = -3.25
 grow_horizontal = 2
 grow_vertical = 2
 text = "Dish 1 of 5"
 label_settings = SubResource("LabelSettings_pevyg")
 horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="StatusLabel" type="Label" parent="DishReportPanel/TopSection" unique_id=437316040]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = 12.75
+offset_right = -182.0
+offset_bottom = 36.75
+grow_horizontal = 2
+grow_vertical = 2
+text = "Status: Suspicious"
+label_settings = SubResource("LabelSettings_pevyg")
 vertical_alignment = 1
 metadata/_edit_group_ = true
 
@@ -371,7 +289,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="DishReportPanel/MiddleSection" unique_id=796984267]
+[node name="DishImage" type="TextureRect" parent="DishReportPanel/MiddleSection" unique_id=796984267]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -381,7 +299,7 @@ offset_top = -151.0
 offset_right = 316.0
 offset_bottom = 144.0
 grow_vertical = 2
-texture = ExtResource("6_emntv")
+texture = ExtResource("8_xxwbq")
 expand_mode = 3
 stretch_mode = 4
 metadata/_edit_group_ = true
@@ -432,10 +350,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -140.0
-offset_right = 155.0
-offset_bottom = -118.0
+offset_left = -18.0
+offset_top = -149.0
+offset_right = 159.0
+offset_bottom = -123.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "INGREDITENTS"
@@ -450,19 +368,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 16.0
-offset_top = -100.0
-offset_right = 136.0
-offset_bottom = 6.0
+offset_left = -16.0
+offset_top = -102.0
+offset_right = 152.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Peach
-Egg
-Cheese
-Tofu"
+text = "Strawberry
+Granola
+Yogurt
+"
 label_settings = SubResource("LabelSettings_qhl6b")
 horizontal_alignment = 1
-vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="AllergensLabel" type="Label" parent="DishReportPanel/MiddleSection" unique_id=1105738088]
 layout_mode = 1
@@ -472,9 +390,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 192.0
-offset_top = -140.0
+offset_top = -149.0
 offset_right = 339.0
-offset_bottom = -118.0
+offset_bottom = -123.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "ALLERGENS"
@@ -489,36 +407,37 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 200.0
-offset_top = -100.0
-offset_right = 320.0
-offset_bottom = 6.0
+offset_left = 184.0
+offset_top = -102.0
+offset_right = 344.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Eggs
-Dairy
-Soy"
+text = "Dairy
+Gluten"
 label_settings = SubResource("LabelSettings_qhl6b")
 horizontal_alignment = 1
+autowrap_mode = 3
 
-[node name="InSeasonLabel" type="Label" parent="DishReportPanel/MiddleSection" unique_id=660306051]
+[node name="PeakseasonLabel" type="Label" parent="DishReportPanel/MiddleSection" unique_id=660306051]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = 68.0
-offset_right = 147.0
+offset_left = -7.5
+offset_top = 64.0
+offset_right = 154.5
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "IN SEASON"
+text = "PEAK SEASON"
 label_settings = SubResource("LabelSettings_f8eui")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InSeasonListLabel" type="Label" parent="DishReportPanel/MiddleSection" unique_id=1811943743]
+[node name="PeakseasonListLabel" type="Label" parent="DishReportPanel/MiddleSection" unique_id=1811943743]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -531,7 +450,7 @@ offset_right = 136.0
 offset_bottom = 133.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Summer"
+text = "Spring"
 label_settings = SubResource("LabelSettings_qhl6b")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -544,12 +463,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 192.0
-offset_top = 69.0
+offset_top = 65.5
 offset_right = 339.0
-offset_bottom = 92.0
+offset_bottom = 91.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "PRICE"
+text = "PRICE TIER"
 label_settings = SubResource("LabelSettings_f8eui")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -567,7 +486,7 @@ offset_right = 320.0
 offset_bottom = 133.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "₱ 100"
+text = "A"
 label_settings = SubResource("LabelSettings_qhl6b")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -608,7 +527,21 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_daxyc")
 flat = true
 metadata/_edit_group_ = true
 
+[node name="Frame" type="NinePatchRect" parent="DishReportPanel/BottomSection/VerifiedButton" unique_id=701870003]
+layout_mode = 0
+offset_right = 96.43411
+offset_bottom = 18.914734
+scale = Vector2(3.225, 3.225)
+texture = ExtResource("5_daxyc")
+region_rect = Rect2(288, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
+
 [node name="VerifiedButtonBG" type="NinePatchRect" parent="DishReportPanel/BottomSection/VerifiedButton" unique_id=369218181]
+visible = false
 layout_mode = 1
 offset_right = 96.43411
 offset_bottom = 19.84497
@@ -641,9 +574,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_daxyc")
 flat = true
-metadata/_edit_group_ = true
+
+[node name="Frame2" type="NinePatchRect" parent="DishReportPanel/BottomSection/SuspiciousButton" unique_id=2125375617]
+layout_mode = 0
+offset_right = 96.43411
+offset_bottom = 18.914734
+scale = Vector2(3.225, 3.225)
+texture = SubResource("CompressedTexture2D_fx71l")
+region_rect = Rect2(160, 272, 32, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_vertical = 2
 
 [node name="SuspiciousButtonBG" type="NinePatchRect" parent="DishReportPanel/BottomSection/SuspiciousButton" unique_id=1375231911]
+visible = false
 layout_mode = 1
 offset_right = 96.43408
 offset_bottom = 19.84497
@@ -664,6 +610,89 @@ text = "Suspicious"
 label_settings = SubResource("LabelSettings_daxyc")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RightNextButton" type="Button" parent="DishReportPanel" unique_id=321922724]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 440.0
+offset_top = -40.0
+offset_right = 536.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xxwbq")
+flat = true
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="DishReportPanel/RightNextButton" unique_id=1450507374]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_xxwbq")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="DishReportPanel/RightNextButton" unique_id=190404651]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_fx71l")
+
+[node name="LeftNextButton" type="Button" parent="DishReportPanel" unique_id=1299646469]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -536.0
+offset_top = -40.0
+offset_right = -440.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xxwbq")
+flat = true
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="DishReportPanel/LeftNextButton" unique_id=381021349]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_xxwbq")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="DishReportPanel/LeftNextButton" unique_id=175233939]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_fx71l")
+flip_h = true
+
+[node name="OpenFolderSound" type="AudioStreamPlayer" parent="." unique_id=1257942447]
+
+[node name="CloseFolderSound" type="AudioStreamPlayer" parent="." unique_id=2060943377]
+
+[node name="PageFlipSound" type="AudioStreamPlayer" parent="." unique_id=1590627746]
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=1872333516]
 
 [connection signal="pressed" from="DishReportPanel/BottomSection/VerifiedButton" to="." method="_on_verified_button_pressed"]
 [connection signal="pressed" from="DishReportPanel/BottomSection/SuspiciousButton" to="." method="_on_suspicious_button_pressed"]
