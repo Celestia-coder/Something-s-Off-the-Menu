@@ -12,19 +12,19 @@ var resto_count = {
 # how many restos can be fraudulent per day [min, max]
 var fraudulent_range = {
 	1: [0, 1],
-	2: [0, 2],
-	3: [0, 2],
-	4: [1, 2],
-	5: [1, 3]
+	2: [1, 2],
+	3: [1, 2],
+	4: [2, 3],
+	5: [2, 3]
 }
 
 # how many fake dishes a fraudulent resto gets per day
 var fake_per_fraudulent = {
-	1: 1,
-	2: 1,
+	1: 2,
+	2: 2,
 	3: 2,
-	4: 2,
-	5: 3
+	4: 3,
+	5: 3 
 }
 
 func generate_day(day):
@@ -84,6 +84,7 @@ func generate_resto(resto_name, day, is_fraud, day_used_names):
 	var actual_status = DecisionTree.classify(total_violations)
 	
 	# DEBUG — remove after testing
+	print("=== ", day, " ===")
 	print("=== ", resto_name, " ===")
 	print("Intended fraud: ", is_fraud)
 	print("Actual status: ", actual_status)

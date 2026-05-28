@@ -1,6 +1,7 @@
 extends Node
 
-# goes through these in order
+# goes through these in order, but shuffled in generate_fake
+# so violations are spread across all types
 var variables = [
 	"reported_price",
 	"reported_season",
@@ -29,25 +30,53 @@ var all_allergens = [
 	"Vanillin", "Collagen"
 ]
 
+# fake ingredients to swap in for ingredient violations
+# these are plausible but wrong ingredients
+var fake_ingredients = [
+	"Carrot", "Potato", "Onion", "Celery",
+	"Spinach", "Pepper", "Ginger", "Garlic",
+	"Broccoli", "Cabbage", "Turnip", "Radish"
+]
+
 func generate_legit():
 	var base = DishDatabase.dishes.pick_random().duplicate(true)
+	_init_reported_fields(base)
 	# 0 = no violations
-	return backtrack(base, 0, 0)
+	return backtrack(base, variables.duplicate(), 0, 0)
 
 func generate_fake(day):
 	var base = DishDatabase.dishes.pick_random().duplicate(true)
+	_init_reported_fields(base)
+	# shuffle so violations arent always price
+	var shuffled = variables.duplicate()
+	shuffled.shuffle()
+	
+	if day >= 4 and randf() < 0.5:
+		shuffled.erase("reported_allergens")
+		shuffled.push_front("reported_allergens")
+	
 	# 1 = exactly one violation
-	return backtrack(base, 0, 1, day)
+	return backtrack(base, shuffled, 0, 1, day)
 
-func backtrack(dish, index, target_violations, day = 1):
+func _init_reported_fields(dish):
+	# set all reported fields to correct values as starting point
+	# backtracking will overwrite whichever one becomes the violation
+	var price_range = tier_ranges[dish.tier]
+	dish.reported_name = dish.name
+	dish.reported_price = (price_range[0] + price_range[1]) / 2
+	dish.reported_season = dish.season
+	dish.reported_allergens = dish.allergens.duplicate()
+	dish.reported_ingredients = dish.ingredients.duplicate()
+
+func backtrack(dish, vars, index, target_violations, day = 1):
 	# all variables assigned, check if violation count matches target
-	if index >= variables.size():
+	if index >= vars.size():
 		var v = AC3.validate(dish)
 		if total(v) == target_violations:
 			return dish
 		return null
 
-	var variable = variables[index]
+	var variable = vars[index]
 	var domain = get_domain(dish, variable, day, target_violations)
 
 	for value in domain:
@@ -58,7 +87,7 @@ func backtrack(dish, index, target_violations, day = 1):
 
 		# prune if violations already exceed target
 		if total(partial) <= target_violations:
-			var result = backtrack(copy, index + 1, target_violations, day)
+			var result = backtrack(copy, vars, index + 1, target_violations, day)
 			if result != null:
 				return result
 
@@ -69,74 +98,71 @@ func get_domain(dish, variable, day, target):
 	match variable:
 		"reported_price":
 			var price_range = tier_ranges[dish.tier]
-
-			# midpoint avoids looping through hundreds of valid prices
 			var correct = (price_range[0] + price_range[1]) / 2
 
 			if target == 0:
 				return [correct]
 
-			# wrong price scales with day difficulty
 			var wrong_price
 			match day:
-				1: wrong_price = price_range[1] + 200  # way off
-				3: wrong_price = int(price_range[1] * 1.2)  # ~20% over
-				4: wrong_price = price_range[1] + 10  # barely over
-				_: wrong_price = price_range[1] + 50  # default
+				1: wrong_price = price_range[1] + 200
+				3: wrong_price = int(price_range[1] * 1.2)
+				4: wrong_price = price_range[1] + 10
+				_: wrong_price = price_range[1] + 50
 
-			# correct value at the end so backtracking can still use it
-			return [wrong_price, correct]
+			var domain = [wrong_price, correct]
+			domain.shuffle()
+			return domain
 
 		"reported_season":
 			if target == 0:
 				return [dish.season]
-
-			# wrong seasons first, correct at the end
 			var wrong = seasons.duplicate()
 			wrong.erase(dish.season)
+			
+			wrong.shuffle()
 			wrong.append(dish.season)
 			return wrong
 
 		"reported_allergens":
 			if target == 0:
 				return [dish.allergens]
-
 			var fake_options = []
-
-			# hidden allergen: remove one real allergen
 			if dish.allergens.size() > 0 and dish.allergens[0] != "None":
 				var hidden = dish.allergens.duplicate()
 				hidden.pop_back()
 				fake_options.append(hidden)
-
-			# false allergen: add one that doesnt belong
-			# works for "None" dishes too
 			for a in all_allergens:
 				if a not in dish.allergens:
 					var false_added = dish.allergens.duplicate()
-					# replace "None" instead of appending to it
 					if false_added.size() > 0 and false_added[0] == "None":
 						false_added = [a]
 					else:
 						false_added.append(a)
 					fake_options.append(false_added)
 					break
-
-			# correct value at the end so backtracking can still use it
+			
+			fake_options.shuffle()
 			fake_options.append(dish.allergens)
 			return fake_options
 
 		"reported_ingredients":
 			if target == 0:
 				return [dish.ingredients]
-
-			# remove one ingredient as the violation
-			var fake = dish.ingredients.duplicate()
-			if fake.size() > 0:
-				fake.pop_back()
-
-			# correct value at the end so backtracking can still use it
-			return [fake, dish.ingredients]
+			var fake_options = []
+			if dish.ingredients.size() > 0:
+				var available_fakes = []
+				for f in fake_ingredients:
+					if f not in dish.ingredients:
+						available_fakes.append(f)
+				if available_fakes.size() > 0:
+					for replace_index in range(dish.ingredients.size()):
+						var swapped = dish.ingredients.duplicate()
+						swapped[replace_index] = available_fakes[randi() % available_fakes.size()]
+						fake_options.append(swapped)
+						break
+			fake_options.append(dish.ingredients)
+			return fake_options
 
 	return []
 

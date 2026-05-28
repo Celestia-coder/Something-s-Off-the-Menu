@@ -70,20 +70,17 @@ func revise(dish, domains, xi, xj, violations):
 func consistent(dish, value, xi, xj):
 	match xi:
 		# price must be within the tier range
-		# xj = "tier", dish[xj] = dish["tier"]
 		"reported_price":
 			var price_range = tier_ranges[dish[xj]]
 			return value >= price_range[0] and value <= price_range[1]
 
 		# season must match exactly
-		# xj = "season", dish[xj] = dish["season"]
 		"reported_season":
 			return value == dish[xj]
 
 		# check both ways:
 		# real allergen missing from report = hidden
 		# extra allergen in report = false
-		# xj = "allergens", dish[xj] = dish["allergens"]
 		"reported_allergens":
 			for allergen in dish[xj]:
 				if allergen != "None" and allergen not in value:
@@ -94,7 +91,6 @@ func consistent(dish, value, xi, xj):
 			return true
 
 		# same logic as allergens but for ingredients
-		# xj = "ingredients", dish[xj] = dish["ingredients"]
 		"reported_ingredients":
 			for ingredient in dish[xj]:
 				if ingredient not in value:
