@@ -1,11 +1,11 @@
 extends Control
 
 var day_timers = {
-	1: 300,  # 5:00
-	2: 510,  # 8:30
-	3: 420,  # 7:00
-	4: 510,  # 8:30
-	5: 420   # 7:00
+	1: 180,  # 3:00
+	2: 240,  # 4:00
+	3: 240,  # 4:00
+	4: 300,  # 5:00
+	5: 300   # 5:00
 }
 
 var time_remaining = 0
@@ -29,6 +29,7 @@ var dish_report_ref = null
 @onready var day_bg_music = $DayBgMusic
 @onready var typewriter_sound = $TypewriterSound
 @onready var button_click_sound = $ButtonClickSound
+@onready var open_folder_sound = $OpenFolderSound
 
 func _ready():
 	option_btn.pressed.connect(_on_option)
@@ -54,6 +55,7 @@ func _setup_audio():
 	day_bg_music.stream = load("res://Assets/Sounds/day_bg_music.mp3")
 	typewriter_sound.stream = load("res://Assets/Sounds/typewriter2.mp3")
 	button_click_sound.stream = load("res://Assets/Sounds/button_click.mp3")
+	open_folder_sound.stream = load("res://Assets/Sounds/open_folder1.wav")
 
 	# both music tracks loop
 	office_bg_music.stream.loop = true
@@ -108,7 +110,6 @@ func _on_timer_end():
 	
 	time_up_label.visible = false
 	fade_layer.visible = false
-	# ADDED end
 	
 	GameState.advance_day()
 	_end_day()
@@ -125,6 +126,7 @@ func _on_folder():
 		add_child(dish_report_ref)
 		dish_report_ref.open()
 	else:
+		open_folder_sound.play()
 		dish_report_ref.show()
 
 func _on_peak_season():
@@ -153,7 +155,6 @@ func _end_day():
 		await play_day_outro()
 		get_tree().change_scene_to_file("res://Scenes/desk.tscn")
 
-# ADDED - fade in animation when a new day starts
 func play_day_intro():
 	timer_running = false
 	fade_layer.visible = true
