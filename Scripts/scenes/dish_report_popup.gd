@@ -24,12 +24,23 @@ var verdict_popup_ref = null
 @onready var left_btn = $DishReportPanel/LeftNextButton
 @onready var right_btn = $DishReportPanel/RightNextButton
 
+#SOUND EFFECTS
+@onready var open_folder_sound = $OpenFolderSound
+@onready var close_folder_sound = $CloseFolderSound
+@onready var page_flip_sound = $PageFlipSound
+@onready var button_click_sound = $ButtonClickSound
+
 func _ready():
 	verified_btn.pressed.connect(_on_verified)
 	suspicious_btn.pressed.connect(_on_suspicious)
 	close_btn.pressed.connect(_on_close)
 	left_btn.pressed.connect(_on_left)
 	right_btn.pressed.connect(_on_right)
+
+	open_folder_sound.stream = load("res://Assets/Sounds/open_folder1.wav")
+	close_folder_sound.stream = load("res://Assets/Sounds/close_folder.mp3")
+	page_flip_sound.stream = load("res://Assets/Sounds/page_flip.mp3")
+	button_click_sound.stream = load("res://Assets/Sounds/button_click.mp3")
 
 func open():
 	# get current resto data from gamestate
@@ -38,9 +49,12 @@ func open():
 	resto_name = resto.name
 	current_dish_index = 0
 	dish_marks = ["", "", "", "", ""]
+	
 	# reset verdict popup ref for new resto
 	verdict_popup_ref = null
 	show()
+	
+	open_folder_sound.play()
 	load_dish(current_dish_index)
 
 func load_dish(index):
@@ -88,6 +102,7 @@ func _update_buttons(index):
 	right_btn.visible = already_judged and index < 4 or (already_judged and index == 4)
 
 func _on_verified():
+	button_click_sound.play()
 	dish_marks[current_dish_index] = "Verified"
 	GameState.save_dish_mark(current_dish_index, "Verified")
 	_update_buttons(current_dish_index)
@@ -100,6 +115,7 @@ func _on_verified():
 		_open_verdict()
 
 func _on_suspicious():
+	button_click_sound.play()
 	dish_marks[current_dish_index] = "Suspicious"
 	GameState.save_dish_mark(current_dish_index, "Suspicious")
 	_update_buttons(current_dish_index)
@@ -119,6 +135,7 @@ func _disable_verdict_buttons():
 
 func _on_left():
 	if current_dish_index > 0:
+		page_flip_sound.play()
 		current_dish_index -= 1
 		load_dish(current_dish_index)
 
@@ -126,6 +143,7 @@ func _on_right():
 	if current_dish_index == 4:
 		_open_verdict()
 	else:
+		page_flip_sound.play()
 		current_dish_index += 1
 		load_dish(current_dish_index)
 
@@ -145,4 +163,5 @@ func _open_verdict():
 	verdict_popup_ref.show()
 
 func _on_close():
+	close_folder_sound.play()
 	hide()

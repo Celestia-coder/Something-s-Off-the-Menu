@@ -39,8 +39,13 @@ var category_button_map = {}
 @onready var allergens_list = $IngredientsGuidePanel/MiddleSection/DishInfoSection/DishInfoSection/DishAllergens/AllergensList
 @onready var close_btn = $IngredientsGuidePanel/TopSection/CloseButton
 
+#SOUND EFFECTS
+@onready var button_click_sound = $ButtonClickSound
+
 func _ready():
 	close_btn.pressed.connect(_on_close)
+	
+	button_click_sound.stream = load("res://Assets/Sounds/button_click.mp3")
 
 	# map category names to their buttons
 	category_button_map = {
@@ -70,6 +75,8 @@ func _ready():
 	_on_category("Pasta")
 
 func _on_category(category):
+	#button_click_sound.play()
+	
 	current_dishes = categories[category]
 
 	# update category label on the left panel
@@ -97,6 +104,8 @@ func _on_category(category):
 	_on_dish(0)
 
 func _on_dish(index):
+	button_click_sound.play()
+	
 	if index >= current_dishes.size():
 		return
 
@@ -123,4 +132,6 @@ func _on_dish(index):
 		allergens_list.text = "\n".join(dish.allergens)
 
 func _on_close():
+	button_click_sound.play()
+	await get_tree().create_timer(0.2).timeout
 	queue_free()

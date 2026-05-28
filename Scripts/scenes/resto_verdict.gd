@@ -15,6 +15,11 @@ var stamped_verdict = ""
 @onready var left_btn = $LeftNextButton
 @onready var right_btn = $RightNextButton
 
+#SOUND EFFECTS
+@onready var verdict_stamp_sound = $VerdictStampSound
+@onready var button_click_sound = $ButtonClickSound
+@onready var page_flip_sound = $PageFlipSound
+
 func _ready():
 	close_btn.pressed.connect(_on_close)
 	clear_btn.pressed.connect(_on_clear_to_operate)
@@ -27,21 +32,28 @@ func _ready():
 	verdict_stamp.hide()
 	confirmation.hide()
 	right_btn.hide()
+	
+	verdict_stamp_sound.stream = load("res://Assets/Sounds/verdict_stamp.mp3")
+	button_click_sound.stream = load("res://Assets/Sounds/button_click.mp3")
+	page_flip_sound.stream = load("res://Assets/Sounds/page_flip.mp3")
 
 	# set resto name from gamestate
 	var resto = GameState.get_current_resto()
 	resto_name_label.text = resto.name
 
 func _on_clear_to_operate():
+	button_click_sound.play()
 	pending_verdict = "CLEAR TO OPERATE"
 	confirmation.show()
 
 func _on_shutdown():
+	button_click_sound.play()
 	pending_verdict = "SHUT DOWN"
 	confirmation.show()
 
 func _on_yes():
 	confirmation.hide()
+	verdict_stamp_sound.play()
 	stamped_verdict = pending_verdict
 
 	var stamp_path = ""
@@ -63,10 +75,12 @@ func _on_yes():
 	GameState.save_verdict(pending_verdict)
 
 func _on_no():
+	button_click_sound.play()
 	confirmation.hide()
 	pending_verdict = ""
 
 func _on_left():
+	page_flip_sound.play()
 	hide()
 	if dish_report_ref:
 		dish_report_ref.current_dish_index = 4
@@ -74,6 +88,7 @@ func _on_left():
 		dish_report_ref.show()
 
 func _on_right():
+	page_flip_sound.play()
 	if not GameState.is_last_resto():
 		GameState.unlock_next_resto()
 		hide()
@@ -95,4 +110,5 @@ func _end_day():
 		get_tree().change_scene_to_file("res://Scenes/desk.tscn")
 
 func _on_close():
+	button_click_sound.play()
 	queue_free()

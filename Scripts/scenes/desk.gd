@@ -24,6 +24,12 @@ var dish_report_ref = null
 @onready var day_transition_label = $FadeLayer/FadeRect/DayTransitionLabel
 @onready var time_up_label = $FadeLayer/FadeRect/TimeUpLabel 
 
+#SOUND EFFECTS
+@onready var office_bg_music = $OfficeBgMusic
+@onready var day_bg_music = $DayBgMusic
+@onready var typewriter_sound = $TypewriterSound
+@onready var button_click_sound = $ButtonClickSound
+
 func _ready():
 	option_btn.pressed.connect(_on_option)
 	folder_btn.pressed.connect(_on_folder)
@@ -37,8 +43,32 @@ func _ready():
 	day_label.text = "DAY " + str(GameState.current_day)
 	time_remaining = day_timers[GameState.current_day]
 	_update_timer_label()
+	
+	_setup_audio()
 
 	play_day_intro()
+
+func _setup_audio():
+	# load music
+	office_bg_music.stream = load("res://Assets/Sounds/office_bg_music.mp3")
+	day_bg_music.stream = load("res://Assets/Sounds/day_bg_music.mp3")
+	typewriter_sound.stream = load("res://Assets/Sounds/typewriter2.mp3")
+	button_click_sound.stream = load("res://Assets/Sounds/button_click.mp3")
+
+	# both music tracks loop
+	office_bg_music.stream.loop = true
+	day_bg_music.stream.loop = true
+
+	# office music always full volume
+	office_bg_music.volume_db = 0.0
+
+	# day_bg_music volume increases per day
+	# day 1 = 20%, day 2 = 40%, day 3 = 60%, day 4 = 80%, day 5 = 100%
+	var day_volume_percent = GameState.current_day * 0.2  # 0.2, 0.4, 0.6, 0.8, 1.0
+	day_bg_music.volume_db = linear_to_db(day_volume_percent)
+
+	office_bg_music.play()
+	day_bg_music.play()
 
 func _process(delta):
 	if not timer_running:
@@ -61,6 +91,11 @@ func _on_timer_end():
 	fade_rect.color = Color(0, 0, 0, 0)
 	time_up_label.modulate.a = 1.0
 	time_up_label.visible = true
+	
+	var times_up_sfx = AudioStreamPlayer.new()
+	times_up_sfx.stream = load("res://Assets/Sound/times_up.mp3")
+	add_child(times_up_sfx)
+	times_up_sfx.play()
 	
 	var tween = create_tween()
 	tween.tween_property(time_up_label, "modulate:a", 1.0, 0.3)
@@ -93,16 +128,19 @@ func _on_folder():
 		dish_report_ref.show()
 
 func _on_peak_season():
+	button_click_sound.play()
 	var guide = load("res://Scenes/peak_season_guide.tscn").instantiate()
 	add_child(guide)
 	guide.show()
 
 func _on_ingredients():
+	#button_click_sound.play()
 	var guide = load("res://Scenes/ingredients_guide.tscn").instantiate()
 	add_child(guide)
 	guide.show()
 
 func _on_price_tier():
+	button_click_sound.play()
 	var guide = load("res://Scenes/price_tier_guide.tscn").instantiate()
 	add_child(guide)
 	guide.show()
@@ -126,6 +164,8 @@ func play_day_intro():
 	day_transition_label.modulate.a = 0.0
 	day_transition_label.visible = true
 	
+	typewriter_sound.play()
+	
 	var tween_in = create_tween()
 	tween_in.tween_property(day_transition_label, "modulate:a", 1.0, 1.0)
 	await tween_in.finished
@@ -143,6 +183,10 @@ func play_day_intro():
 
 func play_day_outro():
 	timer_running = false
+	
+	office_bg_music.stop()
+	day_bg_music.stop()
+	
 	fade_layer.visible = true
 	day_transition_label.visible = false
 	

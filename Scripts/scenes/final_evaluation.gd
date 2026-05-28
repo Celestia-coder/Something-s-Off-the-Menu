@@ -11,8 +11,18 @@ extends Control
 @onready var accuracy_label = $FinalEvaluationPanel/MiddleSection/InvestigationSummary2/FinalAccuracy
 @onready var close_btn = $FinalEvaluationPanel/TopSection/CloseButton
 
+#SOUND EFFECTS
+@onready var outro_music = $OutroMusic
+@onready var button_click_sound = $ButtonClickSound
+
 func _ready():
 	close_btn.pressed.connect(_on_close)
+	
+	outro_music.stream = load("res://Assets/Sounds/outro1.mp3")
+	outro_music.stream.loop = true
+	outro_music.play()
+	
+	button_click_sound.stream = load("res://Assets/Sounds/button_click.mp3")
 
 	var results = ScoreManager.compute()
 
@@ -30,7 +40,7 @@ func _ready():
 		"Rookie":
 			stamp_path = "res://Assets/Stamps/rookie_stamp.png"
 		"Fired":
-			stamp_path = "res://Assets/Stamps/shutdown_stamp.png"
+			stamp_path = "res://Assets/Stamps/fired_stamp.png"
 	var texture = load(stamp_path)
 	if texture:
 		verdict_stamp.texture = texture
@@ -56,6 +66,7 @@ func play_final_intro():
 	fade_layer.visible = false
 
 func _on_close():
+	button_click_sound.play()
 	GameState.current_day = 1
 	GameState.current_resto_index = 0
 	GameState.days = []
