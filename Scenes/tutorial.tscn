@@ -1,0 +1,245 @@
+[gd_scene format=3 uid="uid://bawu15odrvgj8"]
+
+[ext_resource type="Texture2D" uid="uid://bvarq4uxypsyk" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="1_ka2pi"]
+[ext_resource type="Script" uid="uid://bfaqqj23djqde" path="res://Scripts/scenes/tutorial.gd" id="1_p1f1o"]
+[ext_resource type="Texture2D" uid="uid://b1ktnmsxyxxob" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_Slot01b.png" id="2_i6t4g"]
+[ext_resource type="Texture2D" uid="uid://b61qs3smd8nlo" path="res://Assets/Tutorial/slide_1.png" id="2_p8jf4"]
+[ext_resource type="Texture2D" uid="uid://psjf81qaprku" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconArrow01a.png" id="3_p8jf4"]
+[ext_resource type="Texture2D" uid="uid://cuv5jjau6u6vb" path="res://Assets/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="4_p1f1o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ka2pi"]
+font_size = 50
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ys4pu"]
+font_size = 26
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2ono"]
+font_size = 25
+font_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p1f1o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70gml"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ys4pu"]
+
+[node name="tutorial" type="Control" unique_id=256775568]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p1f1o")
+
+[node name="TutorialFrame" type="NinePatchRect" parent="." unique_id=142501431]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.83363
+offset_top = -125.9014
+offset_right = 180.83363
+offset_bottom = 125.9014
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.555, 2.555)
+pivot_offset = Vector2(180.915, 126.17)
+texture = ExtResource("1_ka2pi")
+region_rect = Rect2(0, 0, 62, 30)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TutorialPanel" type="Control" parent="." unique_id=1311731602]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = -307.0
+offset_right = 440.0
+offset_bottom = 307.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="TutorialPanel" unique_id=1147242499]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 16.0
+grow_horizontal = 2
+text = "TUTORIAL"
+label_settings = SubResource("LabelSettings_ka2pi")
+
+[node name="SlideCounter" type="Label" parent="TutorialPanel" unique_id=519750419]
+layout_mode = 1
+offset_right = 80.0
+offset_bottom = 27.0
+text = "Slide 1"
+label_settings = SubResource("LabelSettings_ys4pu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlideImage" type="TextureRect" parent="TutorialPanel" unique_id=1139573874]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = -252.0
+offset_right = 304.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p8jf4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SlideCaptionContainer" type="ScrollContainer" parent="TutorialPanel" unique_id=968758811]
+custom_minimum_size = Vector2(864, 192)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -432.0
+offset_top = 112.0
+offset_right = 432.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SlideCaption" type="Label" parent="TutorialPanel/SlideCaptionContainer" unique_id=1224193492]
+custom_minimum_size = Vector2(864, 192)
+layout_mode = 2
+text = "This is your workspace. Every day, restaurant folders appear on your desk. Use the reference guides to inspect each case before time runs out."
+label_settings = SubResource("LabelSettings_h2ono")
+autowrap_mode = 2
+autowrap_trim_flags = 64
+
+[node name="RightNextButton" type="Button" parent="." unique_id=1735308317]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -44.0
+offset_right = -63.0
+offset_bottom = 44.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_p1f1o")
+flat = true
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RightNextButton" unique_id=1052001853]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i6t4g")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="RightNextButton" unique_id=1027441625]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_p8jf4")
+
+[node name="CloseButton" type="Button" parent="." unique_id=779708284]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -244.0
+offset_top = 56.0
+offset_right = -194.0
+offset_bottom = 107.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_70gml")
+flat = true
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CloseButton" unique_id=1052631711]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = ExtResource("2_i6t4g")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="CloseButton" unique_id=596039219]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("4_p1f1o")
+
+[node name="LeftNextButton" type="Button" parent="." unique_id=1919748332]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = -44.0
+offset_right = 161.0
+offset_bottom = 44.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ys4pu")
+flat = true
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="LeftNextButton" unique_id=2085060184]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i6t4g")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="LeftNextButton" unique_id=189593404]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_p8jf4")
+flip_h = true
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=457839051]
