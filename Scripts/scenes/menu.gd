@@ -20,10 +20,9 @@ func _ready() -> void:
 	button_click_sound.stream = load("res://Assets/Sounds/button_click.mp3")
 
 func _on_play():
-	# generate all 5 days before going to desk
 	button_click_sound.play()
 	GameState.start_game()
-	get_tree().change_scene_to_file("res://Scenes/desk.tscn")
+	get_tree().change_scene_to_file("res://Scenes/opening.tscn")
 
 func _on_tutorial():
 	button_click_sound.play()

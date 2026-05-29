@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://b3ppekjjbw7cv"]
+
+[ext_resource type="Texture2D" uid="uid://bubuc3ad8hjnw" path="res://Assets/UI assets pack 2/UI books & more.png" id="1_7ynk8"]
+[ext_resource type="Script" uid="uid://itfqwcwlo1pq" path="res://Scripts/opening.gd" id="1_c8s8l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq4us"]
+atlas = ExtResource("1_7ynk8")
+region = Rect2(512, 81, 48, 62)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c8s8l"]
+font_size = 28
+
+[node name="opening" type="Control" unique_id=577074937]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c8s8l")
+
+[node name="LetterFrame" type="NinePatchRect" parent="." unique_id=310752415]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.51074
+offset_top = -53.211
+offset_right = 79.51074
+offset_bottom = 53.211
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.54, 6.54)
+pivot_offset = Vector2(79.62, 53.32)
+texture = SubResource("AtlasTexture_oq4us")
+patch_margin_left = 6
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1092931891]
+custom_minimum_size = Vector2(968, 584)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -320.0
+offset_right = 488.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LetterText" type="RichTextLabel" parent="ScrollContainer" unique_id=1157351037]
+custom_minimum_size = Vector2(968, 584)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/default_color = Color(0.08627451, 0.1254902, 0.11764706, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+fit_content = true
+scroll_following = true
+
+[node name="SkipButton" type="Button" parent="." unique_id=636487516]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -112.0
+offset_top = 16.0
+offset_right = -13.064941
+offset_bottom = 56.0
+grow_horizontal = 0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="SkipButton" unique_id=1610434053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Skip"
+label_settings = SubResource("LabelSettings_c8s8l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BeginButton" type="Button" parent="." unique_id=340199508]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -188.73376
+offset_top = -71.0
+offset_right = 188.73376
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="BeginButton" unique_id=1475468567]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BEGIN INVESTIGATION"
+label_settings = SubResource("LabelSettings_c8s8l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OfficeBgMusic" type="AudioStreamPlayer" parent="." unique_id=1544814302]
+
+[node name="TypewriterSound" type="AudioStreamPlayer" parent="." unique_id=1853655281]
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=563572279]
